@@ -1,26 +1,21 @@
 # LCA wiki
 
-```
-                 ┌───────────────────────────────────────────────┐
-                 │  CLAUDE.md  ·  index.md  ·  vocabulary.md     │  entry: schema, map, terms
-                 └───────────────────────┬───────────────────────┘
-        ┌──────────────┬─────────────────┼─────────────────┬──────────────┐
-        ▼              ▼                 ▼                 ▼              ▼
-     core/          sentier/         brightway/          bafu/        ecoinvent/
-  domain-neutral  Sentier platform  Brightway packages  BAFU LCA db   ecoinvent db
-        │              │                 │                 │              │
-   concepts/      platform.md       packages.md       knowledge/     knowledge/
-   standards/     commands.md       commands.md       data/          data/
-   sectors/ GICS  roadmap.md        roadmap.md        use-cases/     use-cases/
-   use-cases/     modules/ (7)      modules/ (15)     roadmap.md     roadmap.md
-   roadmap.md          │                 │
-                       └────────┬────────┘
-                                ▼
-                   <module>/  README · layout · classes · commands
-                              datasets · gotchas · status · api/ · use-cases/
-
-   sources.md  every source cited      log.md  what happened, when
-   templates/  copy to add a page or a branch      raw/  the ILCD Handbook PDF
+```mermaid
+flowchart TD
+    entry["CLAUDE.md · index.md · vocabulary.md<br/><i>schema · map · terms</i>"]
+    entry --> core["core/<br/><i>domain-neutral LCA</i>"]
+    entry --> sentier["sentier/<br/><i>Sentier platform</i>"]
+    entry --> brightway["brightway/<br/><i>Brightway packages</i>"]
+    entry --> bafu["bafu/<br/><i>BAFU LCA database</i>"]
+    entry --> ecoinvent["ecoinvent/<br/><i>ecoinvent database</i>"]
+    core --> coreSub["concepts/ · standards/<br/>sectors/ (GICS) · use-cases/<br/>roadmap.md"]
+    sentier --> sentierSub["platform.md · commands.md<br/>modules/ (7) · roadmap.md"]
+    brightway --> bwSub["packages.md · commands.md<br/>modules/ (15) · roadmap.md"]
+    bafu --> bafuSub["knowledge/ · data/<br/>use-cases/ · roadmap.md"]
+    ecoinvent --> ecoSub["knowledge/ · data/<br/>use-cases/ · roadmap.md"]
+    sentierSub --> module["one module folder<br/>README · layout · classes · commands<br/>datasets · gotchas · status · api/ · use-cases/"]
+    bwSub --> module
+    entry -.-> shared["sources.md · log.md<br/>templates/ · raw/"]
 ```
 
 A public, agent-maintained wiki about life cycle assessment (LCA) practice with the
