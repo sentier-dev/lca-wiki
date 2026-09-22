@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Local, never-committed helper files (for example the private-names reminder list).
+*.local.txt

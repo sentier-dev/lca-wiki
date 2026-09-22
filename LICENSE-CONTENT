@@ -1,0 +1,36 @@
+# Licence for the content of this wiki
+
+Copyright (c) 2026 Départ de Sentier and the lca-wiki contributors.
+
+The content of this repository, meaning every markdown page, every template and every
+piece of prose outside the code, is licensed under the
+
+    Creative Commons Attribution 4.0 International licence (CC BY 4.0)
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this content for any purpose, including commercially,
+provided you give appropriate credit, link to the licence, and indicate whether you
+made changes.
+
+## Attribution
+
+    "LCA wiki", Départ de Sentier and contributors, CC BY 4.0,
+    https://github.com/sentier-dev/lca-wiki
+
+## What this licence does not cover
+
+- The code in `scripts/` and `install.sh`: MIT, see [LICENSE](LICENSE).
+- The generated `api/` folders under the module pages: signatures and docstrings
+  reproduced from each documented package, under that package's own licence, named in
+  each `api/README.md`.
+- The ILCD Handbook PDF in [raw/ilcd/](raw/ilcd/): a European Commission document,
+  reusable with attribution under Commission Decision 2011/833/EU. Its own README
+  carries the citation.
+- Material quoted from third parties inside pages: each quotation keeps the source and
+  the licence its publisher states, recorded in [sources.md](sources.md). Quoting a
+  glossary definition with attribution does not place it under CC BY 4.0.
+
+By contributing, you agree that your contribution is published under this split: CC BY
+4.0 for content, MIT for code.
