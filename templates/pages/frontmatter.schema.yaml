@@ -1,0 +1,126 @@
+# Frontmatter reference for every LCA wiki page.
+#
+# JSON Schema (draft 2020-12) written as YAML. NOTHING VALIDATES AGAINST THIS FILE
+# AUTOMATICALLY: it is the written-out reference a person or an agent reads before
+# filling a page's frontmatter. It describes every markdown file outside scripts/,
+# templates/, raw/, .claude/ and the root orientation files (README.md, CLAUDE.md,
+# AGENTS.md, CONTRIBUTING.md, SPECS.md, log.md, sources.md, index.md, vocabulary.md).
+#
+# Rules the schema cannot express, checked by reading:
+#   * every id in `sources:` must resolve in sources.md;
+#   * a page marked `status: stub` may have no sources yet, and removing the marker
+#     is part of filling the page;
+#   * pages stay between 200 and 400 lines, 800 at the very most, with index.md,
+#     vocabulary.md, sources.md and SPECS.md exempt.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://github.com/sentier-dev/lca-wiki/templates/pages/frontmatter.schema.yaml"
+title: LCA wiki page frontmatter
+type: object
+additionalProperties: false
+required: [title, type, summary, audience, updated, sources]
+
+properties:
+  title:
+    description: The page title, as a reader would name it.
+    type: string
+    minLength: 1
+  type:
+    description: The page type; decides which template the page follows.
+    enum:
+      - concept
+      - standard
+      - sector
+      - use-case
+      - module
+      - module-page
+      - database
+      - branch
+      - readme
+      - roadmap
+  summary:
+    description: One line, reused verbatim as the page's line in index.md.
+    type: string
+    minLength: 1
+    pattern: "^[^\n]+$"
+  audience:
+    description: The personas this page primarily serves.
+    type: array
+    minItems: 1
+    uniqueItems: true
+    items:
+      enum: [P1, P2, P3]
+  updated:
+    description: The date the content was last checked, YYYY-MM-DD.
+    type: string
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+  sources:
+    description: >
+      Ids that resolve in sources.md. May be empty only for readme and roadmap
+      pages: a folder README and a roadmap make no sourced claims. Terms are defined
+      in the root vocabulary.md, where each bullet carries its own `source:` id.
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      pattern: "^[a-z0-9]+(-[a-z0-9.]+)*$"
+  related:
+    description: Optional relative links to sibling pages.
+    type: array
+    items:
+      type: string
+      minLength: 1
+  status:
+    description: >
+      Only `stub`. A stub is a placeholder page a later phase fills: it may carry
+      no sources. Removing `status:` is part of filling the page. No page in the
+      wiki carries it today.
+    enum: [stub]
+  verified:
+    description: Required on use-case pages; whether the steps were run end to end.
+    enum: [true, false, "yes", "no"]
+  verified_on:
+    description: Required when `verified` is yes; the date of the verification run.
+    type: string
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+  verified_env:
+    description: Required when `verified` is yes; the environment the run happened in.
+    type: string
+    minLength: 1
+
+allOf:
+  # Sources are required, except on page types that make no sourced claims and
+  # on pages still marked as stubs.
+  - if:
+      required: [type]
+      properties:
+        type:
+          enum: [readme, roadmap]
+    then: true
+    else:
+      if:
+        required: [status]
+        properties:
+          status:
+            const: stub
+      then: true
+      else:
+        properties:
+          sources:
+            minItems: 1
+
+  # A use case says whether it was actually run, and when it was, where.
+  - if:
+      required: [type]
+      properties:
+        type:
+          const: use-case
+    then:
+      required: [verified]
+      if:
+        required: [verified]
+        properties:
+          verified:
+            enum: [true, "yes"]
+      then:
+        required: [verified_on, verified_env]
