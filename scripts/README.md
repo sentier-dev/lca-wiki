@@ -10,4 +10,4 @@ python3 scripts/extract_ilcd_glossary.py            # reads the PDF in raw/ilcd/
 ```
 
 The wiki has no lints, builders or CI: `index.md` and `vocabulary.md` are written by
-hand, and the checks live in [../CLAUDE.md](../CLAUDE.md) as a procedure an agent runs.
+hand, and the checks live in [../AGENTS.md](../AGENTS.md) as a procedure an agent runs.

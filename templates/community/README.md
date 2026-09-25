@@ -14,7 +14,7 @@ who maintains it, and who its pages are for.>
 
 Copy this folder to the root of the repository as `<name>/`, then replace every
 placeholder. The branch starts with the same kit as every other: the schema in
-`CLAUDE.md`, mirrored in `AGENTS.md`, the skills in `.claude/skills/` and the house
+`AGENTS.md` (with its `CLAUDE.md` symlink), the skills in `.claude/skills/` and the house
 rules in `.claude/rules/`, which apply to this branch from the first commit.
 
 ## What belongs here

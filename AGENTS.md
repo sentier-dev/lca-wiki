@@ -1,10 +1,11 @@
 # AGENTS.md — the schema of this wiki
 
 This file tells an agent how to read, extend and check this repository, in tool-neutral
-terms: it names no vendor, no product and no tool-specific mechanism. It mirrors
-`CLAUDE.md`, the same contract with the Claude Code kit named; if the two ever disagree
-they are both wrong, so fix both in the same change. There are no lints, builders, hooks
-or CI here: every rule below is a convention you follow, and check, by hand.
+terms: it names no vendor, no product and no tool-specific mechanism, so any coding
+agent (Claude Code, Codex, Gemini CLI, OpenCode, ...) can follow it. `CLAUDE.md` is a
+symlink to this file, kept only so Claude Code loads it automatically. There are no
+lints, builders, hooks or CI here: every rule below is a convention you follow, and
+check, by hand.
 
 ## Read order, always
 
@@ -41,7 +42,7 @@ which template the page follows.
 ## Frontmatter
 
 Required on every markdown page except those in `scripts/`, `templates/`, `raw/`,
-`.claude/`, the generated `api/` folders, and the root files `README.md`, `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`,
+`.claude/`, the generated `api/` folders, and the root files `README.md`, `AGENTS.md` (and its `CLAUDE.md` symlink), `CONTRIBUTING.md`,
 `SPECS.md`, `log.md`, `sources.md`, `index.md` and `vocabulary.md`.
 
 ```yaml

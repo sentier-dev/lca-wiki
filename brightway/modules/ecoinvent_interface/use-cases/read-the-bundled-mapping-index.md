@@ -109,7 +109,7 @@ releases the attribute-based API works for at all.
   is exactly why it can ship in a wheel and be read here.
 - **Do not republish the records.** The names are ecoinvent's; this wiki describes the
   structure and the counts, and nothing else. See the licensing constraint in
-  [../../../../CLAUDE.md](../../../../CLAUDE.md).
+  [../../../../AGENTS.md](../../../../AGENTS.md).
 - **`ProcessMapping` still wants `Settings`.** Constructing the class is not what reads
   the archive; the steps above go at the zip directly, which is why they need no
   account.

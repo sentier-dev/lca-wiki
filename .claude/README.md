@@ -13,8 +13,7 @@ same discipline the wiki was built with.
 There are no hooks, no lints and no CI. The rules in this repository are conventions an
 agent follows and checks by hand; the `wiki-lint` skill is that check written down.
 
-The schema itself is not here: it is [../CLAUDE.md](../CLAUDE.md), at the root, mirrored
-tool-neutrally in [../AGENTS.md](../AGENTS.md). Agents that do not read this folder still
+The schema itself is not here: it is [../AGENTS.md](../AGENTS.md), at the root, tool-neutral; `CLAUDE.md` is a symlink to it.
 get the rules from those two files.
 
 Recommended global plugins, which are optional, are installed by

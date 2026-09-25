@@ -9,7 +9,8 @@ hackathon proposal by Départ de Sentier, the maintainers' internal agent wiki t
 pioneered the conventions, and Karpathy's "LLM
 Wiki" gist. Conflicts found in the requirements were put to Laurenz on 2026-09-21;
 the answers are binding and recorded in section 12. **Sub-agents build against
-section 12 as written.**
+section 12 as written.** Amendment 2026-09-25: `AGENTS.md` is the canonical schema file and
+`CLAUDE.md` a symlink to it (the reverse of D5 below), so the wiki reads the same for every agent.
 
 ---
 

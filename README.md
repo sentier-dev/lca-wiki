@@ -7,7 +7,7 @@ Started from the Brightcon 2026 hackathon proposal by [Départ de Sentier](https
 
 ```mermaid
 flowchart TD
-    entry["CLAUDE.md · index.md · vocabulary.md<br/><i>schema · map · terms</i>"]
+    entry["AGENTS.md · index.md · vocabulary.md<br/><i>schema · map · terms</i>"]
     entry --> core["core/<br/><i>domain-neutral LCA</i>"]
     entry --> sentier["sentier/<br/><i>Sentier platform</i>"]
     entry --> brightway["brightway/<br/><i>Brightway packages</i>"]
@@ -30,13 +30,14 @@ Check [vocabulary.md](vocabulary.md) for what a term means: one heading per term
 Then open the page you need.
 Every claim carries a source id that resolves in [sources.md](sources.md).
 
-An LLM reads it the same way: clone, then point the agent at [CLAUDE.md](CLAUDE.md) or its mirror [AGENTS.md](AGENTS.md).
+An LLM reads it the same way: clone, then point the agent at [AGENTS.md](AGENTS.md).
+It is tool-neutral; `CLAUDE.md` is a symlink to it for Claude Code.
 
 ## Who it is for
 
 Practitioners: [core/use-cases/](core/use-cases/) for the method, [core/sectors/](core/sectors/) for your sector, then a module's `use-cases/` for verified commands.
 Contributors: [CONTRIBUTING.md](CONTRIBUTING.md), then the `roadmap.md` of a branch.
-Wiki developers: [CLAUDE.md](CLAUDE.md), then [templates/](templates/) to add a page or a whole community branch.
+Wiki developers: [AGENTS.md](AGENTS.md), then [templates/](templates/) to add a page or a whole community branch.
 
 ## Contributing
 

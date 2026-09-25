@@ -11,5 +11,4 @@ copies are the ones that apply here.
 | `security.md` | every page, and everything about to be committed |
 
 The content rules, which matter more here than the style rules, are in
-[../../CLAUDE.md](../../CLAUDE.md) and its tool-neutral mirror
-[../../AGENTS.md](../../AGENTS.md).
+[../../AGENTS.md](../../AGENTS.md) (tool-neutral; `CLAUDE.md` is a symlink to it)

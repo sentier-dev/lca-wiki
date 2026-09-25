@@ -15,7 +15,7 @@ That is the whole setup. There is nothing to install and nothing to build.
 
 Then read [index.md](index.md) and [vocabulary.md](vocabulary.md). They are short, they
 are maintained by hand, and they tell you what already exists. The schema an agent
-follows is [CLAUDE.md](CLAUDE.md), mirrored tool-neutrally in [AGENTS.md](AGENTS.md); it
+follows is [AGENTS.md](AGENTS.md) (tool-neutral; `CLAUDE.md` is a symlink to it); it
 is worth reading even if you write by hand.
 
 Optional, and only if you work with a coding agent: `./install.sh` installs the plugin

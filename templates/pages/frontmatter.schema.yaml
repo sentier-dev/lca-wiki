@@ -3,7 +3,7 @@
 # JSON Schema (draft 2020-12) written as YAML. NOTHING VALIDATES AGAINST THIS FILE
 # AUTOMATICALLY: it is the written-out reference a person or an agent reads before
 # filling a page's frontmatter. It describes every markdown file outside scripts/,
-# templates/, raw/, .claude/ and the root orientation files (README.md, CLAUDE.md,
+# templates/, raw/, .claude/ and the root orientation files (README.md, AGENTS.md, CLAUDE.md,
 # AGENTS.md, CONTRIBUTING.md, SPECS.md, log.md, sources.md, index.md, vocabulary.md).
 #
 # Rules the schema cannot express, checked by reading:

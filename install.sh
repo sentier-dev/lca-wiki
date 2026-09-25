@@ -3,7 +3,7 @@
 # Recommended agent kit for working on this wiki.
 #
 # Nothing here is required: the repository ships its own kit in .claude/ (the schema in
-# CLAUDE.md and AGENTS.md, the skills, the house rules) and one script in scripts/. This script installs the heavier global plugins the wiki was built with, at
+# AGENTS.md with its CLAUDE.md symlink, the skills, the house rules) and one script in scripts/. This script installs the heavier global plugins the wiki was built with, at
 # the versions it was built with, so a contributor gets the same discipline.
 #
 # What "pinned" means per source, because the four differ:
@@ -150,4 +150,4 @@ npx "get-shit-done-cc@${GET_SHIT_DONE_VERSION}" --claude --global
 
 say ""
 say "Done. This repository itself needs no setup: it is markdown plus one script."
-say "Read CLAUDE.md, then index.md and vocabulary.md."
+say "Read AGENTS.md, then index.md and vocabulary.md."

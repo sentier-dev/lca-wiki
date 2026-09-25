@@ -73,7 +73,7 @@ then [modules/sentier-importers/README.md](modules/sentier-importers/README.md):
 source is the smallest useful contribution. [roadmap.md](roadmap.md) lists what this
 branch still owes, and each module's `status.md` lists the gaps in that package.
 
-**P3, a wiki developer.** Read [../CLAUDE.md](../CLAUDE.md) first, then
+**P3, a wiki developer.** Read [../AGENTS.md](../AGENTS.md) first, then
 [modules/README.md](modules/README.md) for the module folder layout,
 [../vocabulary.md](../vocabulary.md) for the terms this branch contributes, and
 [../CONTRIBUTING.md](../CONTRIBUTING.md) for how a page gets added.

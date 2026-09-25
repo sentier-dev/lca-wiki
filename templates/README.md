@@ -38,6 +38,6 @@ whole [community/](community/) folder to `<name>/` at the root of the repository
    [../log.md](../log.md).
 
 The skill kit in `.claude/` applies to every branch equally: the same schema
-([../CLAUDE.md](../CLAUDE.md), mirrored in [../AGENTS.md](../AGENTS.md)), the same
+([../AGENTS.md](../AGENTS.md); `CLAUDE.md` is a symlink to it), the same
 skills and the same house rules. A new branch starts with the same discipline as
 `core/`.

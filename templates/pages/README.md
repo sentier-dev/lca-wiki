@@ -24,5 +24,5 @@ A template is named after the page type. A copy is named after its subject.
 
 Add it when a page type exists that no template covers, and add that type to
 [frontmatter.schema.yaml](frontmatter.schema.yaml) and to the page-type table in
-[../../CLAUDE.md](../../CLAUDE.md) and [../../AGENTS.md](../../AGENTS.md) in the same
+[../../AGENTS.md](../../AGENTS.md) in the same
 change.

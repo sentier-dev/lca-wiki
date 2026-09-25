@@ -57,6 +57,6 @@ conversation with the maintainers, not a drop.
 
 ## The kit travels with the branch
 
-The schema in `CLAUDE.md` (mirrored in `AGENTS.md`), the skills in `.claude/skills/` and
+The schema in `AGENTS.md` (with its `CLAUDE.md` symlink), the skills in `.claude/skills/` and
 the house rules in `.claude/rules/` apply to the new branch from its first commit.
 Nothing about them is per-branch, and nothing in a branch may opt out of them.

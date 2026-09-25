@@ -78,7 +78,7 @@ rule, [standards/ilcd-format.md](standards/ilcd-format.md) for the data set type
 [standards/glad-and-nomenclatures.md](standards/glad-and-nomenclatures.md) for how flow
 lists relate. Then [../CONTRIBUTING.md](../CONTRIBUTING.md) and the folder READMEs below.
 
-**P3, the wiki developer.** Read [../CLAUDE.md](../CLAUDE.md) first, then this page for
+**P3, the wiki developer.** Read [../AGENTS.md](../AGENTS.md) first, then this page for
 how `core/` is partitioned, then
 [concepts/elementary-and-intermediate-flows.md](concepts/elementary-and-intermediate-flows.md)
 and [standards/ilcd-format.md](standards/ilcd-format.md), which are the two pages an

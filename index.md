@@ -7,13 +7,13 @@ When you add, rename or remove a page, edit this file.
 
 - **Practitioner (P1):** [core/use-cases/](#coreuse-cases) for the method walk-throughs, [core/sectors/](#coresectors) for your GICS sector, then the module `use-cases/` folders under [sentier/](#sentier) and [brightway/](#brightway) for verified commands, and [bafu/](#bafu) or [ecoinvent/](#ecoinvent) for the database you use.
 - **Contributor (P2):** [CONTRIBUTING.md](CONTRIBUTING.md), then each branch's `roadmap.md` (listed under its branch heading) for what is open.
-- **Wiki developer (P3):** [CLAUDE.md](CLAUDE.md), then the templates the index does not list: `templates/community/` for a new branch and `templates/pages/` for page types.
+- **Wiki developer (P3):** [AGENTS.md](AGENTS.md), then the templates the index does not list: `templates/community/` for a new branch and `templates/pages/` for page types.
 
 ## Root
 
 - [README.md](README.md) — Human landing page: what this wiki is, who it is for, how to read it.
-- [CLAUDE.md](CLAUDE.md) — Schema for agents: page types, frontmatter, link rules, workflows, constraints.
-- [AGENTS.md](AGENTS.md) — Tool-neutral mirror of CLAUDE.md.
+- [AGENTS.md](AGENTS.md) — Schema for agents, tool-neutral: page types, frontmatter, link rules, workflows, constraints.
+- [CLAUDE.md](CLAUDE.md) — Symlink to AGENTS.md so Claude Code loads the schema automatically.
 - [CONTRIBUTING.md](CONTRIBUTING.md) — How to add a source, a page, a module or a community branch.
 - [SPECS.md](SPECS.md) — The specification the wiki is built against: scope, layout, phases, decisions.
 - [sources.md](sources.md) — Registry of every external source the wiki cites, with URL, access date and licence.
