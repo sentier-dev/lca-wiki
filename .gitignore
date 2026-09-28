@@ -4,3 +4,4 @@ __pycache__/
 
 # Local, never-committed helper files (for example the private-names reminder list).
 *.local.txt
+.gstack/
