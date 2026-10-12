@@ -3,7 +3,7 @@ title: sentier-inventory use cases
 type: readme
 summary: End-to-end things a practitioner does with the Sentier inventory data.
 audience: [P1]
-updated: 2026-09-22
+updated: 2026-10-12
 sources: []
 ---
 
@@ -14,18 +14,17 @@ One file per use case, copied from
 
 ## Pages here
 
-- [read-a-sector-folder-with-pandas.md](read-a-sector-folder-with-pandas.md): one sector's processes and exchanges in a dataframe.
+- [read-a-source-folder-with-pandas.md](read-a-source-folder-with-pandas.md): one source's processes and exchanges in a dataframe, one sector filtered out of the column.
 - [validate-the-inventory-schema.md](validate-the-inventory-schema.md): run the repository's own validator, as CI does.
 
-Further candidates, in the order they would help a reader: reading one sector into a
-dataframe, validating a delivery before opening a pull request, merging two sector
-folders under the rank rule, and finding the processes that produce a given reference
-product.
+Further candidates, in the order they would help a reader: validating a delivery before
+opening a pull request, comparing two releases of one source side by side, and finding
+the processes that produce a given reference product.
 
 ## Naming rule
 
 `lower-case-with-hyphens.md`, verb first, naming the outcome rather than the function
-called: `read-a-sector-into-a-dataframe.md`, not `run-pyarrow.md`.
+called: `read-a-source-into-a-dataframe.md`, not `run-pyarrow.md`.
 
 ## How to add here
 

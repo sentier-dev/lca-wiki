@@ -3,8 +3,8 @@ title: sentier-brightway
 type: module
 summary: The loader that installs Sentier data into a Brightway project or a folder of plain files.
 audience: [P1, P2]
-updated: 2026-09-21
-sources: [sentier-brightway-repo]
+updated: 2026-10-12
+sources: [sentier-brightway-repo, sentier-brightway-pr-3]
 related: [../../platform.md, ../../commands.md, ../../../bafu/README.md]
 ---
 
@@ -24,6 +24,13 @@ of a clone of `github.com/sentier-dev/sentier-brightway` at commit `a9dba75`, da
 The package is **not on PyPI**: a request to `https://pypi.org/pypi/sentier-brightway/json`
 on 2026-09-21 answered 404, so install it from git. The `CHANGELOG.md` heading for 0.1.0
 still reads "unreleased". (source: sentier-brightway-repo)
+
+**Re-read on 2026-10-12** at commit `3239a4e`, the head of branch `feat/source-folders`
+proposed as pull request #3 and not yet merged. That commit follows the source-folder
+layout of sentier-inventory schema 0.3.0: the loader opens the one folder
+`data/<source>-<source_version>/` whose metadata names the requested source, keeps the
+`sector` column on every process, and pins sentier-inventory at `cf54f55`. The pages
+below say where it differs from 0.1.0 at `a9dba75`. (source: sentier-brightway-pr-3)
 
 ## Install
 
@@ -61,7 +68,7 @@ pinned commit of its own repository. Broad descriptors only; the details are in
 
 | Dataset | Version | Provenance | Where it is documented |
 |---|---|---|---|
-| BAFU-2026 life cycle inventory | v1, 11,947 processes in 11 sector folders | sentier-inventory | [../../../bafu/](../../../bafu/), [../sentier-inventory/](../sentier-inventory/) |
+| BAFU-2026 life cycle inventory | v1, 11,947 processes in one source folder, `data/bafu-2026-v1/`, the sector as a column | sentier-inventory | [../../../bafu/](../../../bafu/), [../sentier-inventory/](../sentier-inventory/) |
 | EF 3.1 elementary flows (biosphere) | EF 3.1 shards of the vocabulary | sentier-vocab | [../sentier-vocab/](../sentier-vocab/) |
 | EF 3.1 impact assessment methods | 25 impact categories, global factors | sentier-methods | [../sentier-methods/](../sentier-methods/) |
 | BAFU to EF 3.1 flow bridge | four ordered mapping packages | sentier-mappings | [../sentier-mappings/](../sentier-mappings/) |

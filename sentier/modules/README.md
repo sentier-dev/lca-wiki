@@ -3,7 +3,7 @@ title: sentier/modules
 type: readme
 summary: One folder per Sentier package or data repository, each following the codebase template.
 audience: [P1, P2, P3]
-updated: 2026-09-22
+updated: 2026-10-12
 sources: []
 ---
 
@@ -20,7 +20,7 @@ documents one Sentier package or data repository.
 | [sentier-brightway/](sentier-brightway/) | Application | The loader that installs the platform data into a Brightway project, or writes it as plain files. |
 | [sentier-agribalyse/](sentier-agribalyse/) | Application | The public Agribalyse-facing work of the platform. |
 | [sentier-vocab/](sentier-vocab/) | Data | The controlled vocabulary of the platform. |
-| [sentier-inventory/](sentier-inventory/) | Data | The life cycle inventory data, organised per sector. |
+| [sentier-inventory/](sentier-inventory/) | Data | The life cycle inventory data, one folder per source release, the sector as a column. |
 | [sentier-methods/](sentier-methods/) | Data | The impact assessment methods and characterisation factors. |
 | [sentier-mappings/](sentier-mappings/) | Cross-cutting | The bridge packages that map one nomenclature onto another. |
 

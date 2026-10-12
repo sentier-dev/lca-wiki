@@ -3,8 +3,8 @@ title: Materials
 type: sector
 summary: "Bulk materials from ore and feedstock to the factory gate: what an LCA of the GICS Materials sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -40,9 +40,9 @@ Foreground data is the process recipe: inputs per unit of output, energy carrier
 direct emissions and the fate of by-products. Background data comes from:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  the `08-materials` folder, with `03-chemicals` for feedstocks and `07-construction`
-  for the construction-bound materials; sector folders carry a rank prefix and the
-  lower rank wins when records overlap (sentier-inventory-readme).
+  the `sector` value `materials`, with `chemicals` for feedstocks and `construction` for
+  the construction-bound materials; the sector is a column of the process table, so a
+  sector is a filter on one source folder (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `metals`, `minerals`,
   `chemicals`, `plastics`, `glass`, `ceramics`, `wood`, `paper+ board`, `cardboard`,
   `construction materials` and `insulation materials` (bafu-2026-release).
@@ -88,7 +88,7 @@ data usually lacks.
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `08-materials`, `03-chemicals`, `07-construction` |
+| Sentier inventory `sector` values | `materials`, `chemicals`, `construction` |
 | BAFU:2026 top-level process categories | metals, minerals, chemicals, plastics, glass, ceramics, wood, paper+ board, cardboard, construction materials, insulation materials |
 | ISIC Rev.4 sections | B (mining and quarrying), C (manufacturing) |
 

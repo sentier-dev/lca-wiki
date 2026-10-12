@@ -3,8 +3,8 @@ title: Assess an energy carrier in Energy
 type: use-case
 summary: "Model a fuel chain to a named point: the energy basis, the refinery allocation, fugitive and vented methane, and whether combustion is inside the boundary."
 audience: [P1]
-updated: 2026-09-22
-sources: [gics-2023, sentier-inventory-readme, bafu-2026-release, epd-international-pcr-library, ef-pef-method, ilcd-2010, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [gics-2023, sentier-inventory-readme, bafu-2026-release, epd-international-pcr-library, ef-pef-method, ilcd-2010, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../sectors/energy.md, ../concepts/allocation-and-multifunctionality.md, ../concepts/system-boundary.md, assess-an-electricity-mix-in-utilities.md, choose-a-background-database.md]
 ---
@@ -38,9 +38,9 @@ content of fuel ([../sectors/energy.md](../sectors/energy.md)).
   finds its programme rules (epd-international-pcr-library). No PEFCR in the Commission's
   current list covers fuels or extraction, and rules outside that list are either outdated
   or private initiatives (ef-pef-method).
-- **Tools and background data.** Sentier inventory folder `05-energy`, which holds the
-  energy carriers and the largest process count of any sector folder, with `03-chemicals`
-  and `04-transport` supplying the process inputs and the delivery steps
+- **Tools and background data.** Sentier inventory `sector` value `energy`, which holds
+  the energy carriers and the largest process count of any sector, with `chemicals` and
+  `transport` supplying the process inputs and the delivery steps
   (sentier-inventory-readme); BAFU:2026 top-level categories `fuels`, `oil`,
   `natural gas`, `pipeline`, `biomass` and `underground deposit` (bafu-2026-release).
 
@@ -101,7 +101,7 @@ cradle-to-grave study of an energy service carries the combustion emissions
 
 7. **Install the background and build the chain.** Loader:
    [../../sentier/modules/sentier-brightway/use-cases/](../../sentier/modules/sentier-brightway/use-cases/);
-   the `05-energy` folder in
+   the `energy` sector in
    [../../sentier/modules/sentier-inventory/use-cases/](../../sentier/modules/sentier-inventory/use-cases/);
    the BAFU release in [../../bafu/use-cases/](../../bafu/use-cases/); a licensed ecoinvent
    release through

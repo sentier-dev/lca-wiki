@@ -3,8 +3,8 @@ title: Sentier commands
 type: module-page
 summary: One table of every runnable command across the Sentier packages, with how each row was checked.
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [sentier-brightway-repo, sentier-importers-repo, sentier-vocab-repo, sentier-inventory-repo, sentier-methods-repo, sentier-mappings-repo]
+updated: 2026-10-12
+sources: [sentier-brightway-repo, sentier-importers-repo, sentier-vocab-repo, sentier-inventory-repo, sentier-inventory-pr-5, sentier-methods-repo, sentier-mappings-repo]
 related: [README.md, modules/sentier-brightway/commands.md, modules/sentier-importers/commands.md]
 ---
 
@@ -45,7 +45,7 @@ sentier-methods-repo, sentier-mappings-repo).
 | `uv run python -m sentier_vocab coverage` | sentier-vocab | Regenerates the coverage matrix of the vocabulary. | README |
 | `uv run sentier-vocab <command>` | sentier-vocab | The same command line as `python -m sentier_vocab`, through the console script. | README |
 | `uv run bash scripts/generate.sh` | sentier-vocab | Fetches the external ontologies and runs the transitional importers. | README |
-| `uv run --with "jsonschema[format],pyyaml,pyarrow" python scripts/validate.py` | sentier-inventory | Validates every sector folder against the schema contracts; what CI runs on each pull request. | README |
+| `uv run --with "jsonschema[format],pyyaml,pyarrow" python scripts/validate.py` | sentier-inventory | Validates every source folder, `data/<source>-<source_version>/`, against the schema contracts; what CI runs on each pull request. | README |
 | `uv run --with pyarrow --with pyyaml --with 'jsonschema[format]' python scripts/validate.py` | sentier-methods | Validates every method data folder against the schemas; what CI runs on each pull request. | README |
 | `uv run --with-requirements scripts/requirements.txt python scripts/validate.py` | sentier-mappings | Validates every source-and-target pair against the package and metadata schemas. | README |
 | `uv run --with-requirements scripts/requirements.txt pytest -q tests` | sentier-mappings | Runs the validator's own test suite. | README |

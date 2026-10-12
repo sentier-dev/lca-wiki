@@ -3,8 +3,8 @@ title: Financials
 type: sector
 summary: "Banks, financial services and insurance: why a product LCA rarely fits the GICS Financials sector, and what this wiki does and does not cover."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -45,9 +45,8 @@ sector pages: office and data-centre energy, IT equipment, business travel, pape
 building services.
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  no sector folder corresponds to Financials; the folders are
-  `01-agriculture` through `10-building-services` plus `99-obsolete`, all of them
-  physical (sentier-inventory-readme).
+  no `sector` value corresponds to Financials; the values are `agriculture` through
+  `building-services` plus `obsolete`, all of them physical (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - no top-level process category corresponds to financial
   activity (bafu-2026-release).
 - [../../ecoinvent/](../../ecoinvent/) - structure only, no amounts.
@@ -87,7 +86,7 @@ and read this page for what the sector adds to them. The gap is on
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | none |
+| Sentier inventory `sector` values | none |
 | BAFU:2026 top-level process categories | none |
 | ISIC Rev.4 sections | K (financial and insurance activities) |
 

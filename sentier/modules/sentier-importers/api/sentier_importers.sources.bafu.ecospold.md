@@ -21,6 +21,10 @@ uvx --python 3.11 --from pydoc-markdown==4.8.2 pydoc-markdown \
 ```
 
 Generated file: do not edit by hand; regenerate with the command above.
+Exception recorded here: on 2026-10-12 the `SECTORS` and `sector_for` docstrings were
+updated by hand to commit `a27910f` (pull request #29), where the sector ids lost their
+folder rank prefix, and `sector_slug`, removed in that commit, was replaced by the new
+`SOURCE_FOLDER` constant; the rest of the file is as generated.
 The output of that command is then passed through one mechanical pass: links
 the wiki cannot resolve are flattened to their text, absolute file paths become
 `<path>`, and names of private repositories become `<private>`.
@@ -58,7 +62,9 @@ regenerated data is bit-identical across users).
 
 #### SECTORS
 
-Sector folder -> BAFU ``referenceFunction`` categories (covers all 59 observed).
+Sector id -> BAFU ``referenceFunction`` categories (covers all 59 observed).
+The ids are the ``processes.sector`` enum of sentier-inventory (schema 0.3.0); the
+dict order is the former folder rank order and names the vocab per-sector files.
 
 <a id="sentier_importers.sources.bafu.ecospold.sector_for"></a>
 
@@ -68,20 +74,14 @@ Sector folder -> BAFU ``referenceFunction`` categories (covers all 59 observed).
 def sector_for(category: str) -> str
 ```
 
-Sector folder for a BAFU category; raises ``ParseError`` on unknown categories.
+Sector id for a BAFU category; raises ``ParseError`` on unknown categories.
 
-<a id="sentier_importers.sources.bafu.ecospold.sector_slug"></a>
+<a id="sentier_importers.sources.bafu.ecospold.SOURCE_FOLDER"></a>
 
-#### sector\_slug
+#### SOURCE\_FOLDER
 
-```python
-def sector_slug(sector: str) -> str
-```
-
-Rank-free sector name (``01-agriculture`` -> ``agriculture``).
-
-Vocab payload files are content-named per sector without the inventory
-folder's rank prefix.
+sentier-inventory folder holding this release: ``data/<source>-<source_version>/``.
+One folder per published release; a delivery rewrites it whole.
 
 <a id="sentier_importers.sources.bafu.ecospold.compartment_slug"></a>
 

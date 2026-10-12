@@ -3,15 +3,17 @@ title: sentier-brightway layout
 type: module-page
 summary: How the sentier-brightway repository is organised, file by file.
 audience: [P2, P3]
-updated: 2026-09-21
-sources: [sentier-brightway-repo]
+updated: 2026-10-12
+sources: [sentier-brightway-repo, sentier-brightway-pr-3]
 ---
 
 # sentier-brightway layout
 
 The tree below is the clone of `github.com/sentier-dev/sentier-brightway` at commit
 `a9dba75` (2026-09-17), read on 2026-09-21. Only the files a reader would open are
-listed. (source: sentier-brightway-repo)
+listed; the `inventory.py` line follows commit `3239a4e` (pull request #3, pending merge),
+which replaced the sector-folder reader with a source-folder one and added `--source-version`
+to `cli.py`. (source: sentier-brightway-repo, sentier-brightway-pr-3)
 
 ```
 src/sentier_brightway/
@@ -20,7 +22,7 @@ src/sentier_brightway/
   constants.py       every shared name: database names, method prefix, IRIs, citation
   fetch.py           resolve the data root: local checkout, or verified download cache
   sources.toml       the pinned manifest: repository, commit, file, sha256
-  inventory.py       read the inventory sector folders into two flat frames
+  inventory.py       read one source folder of the inventory, data/<source>-<version>/, into two flat frames
   flows.py           read elementary-flow terms from the vocabulary, split by source
   methods.py         read the impact methods and their global characterisation factors
   bridge.py          read the ordered mapping packages that relink source flows

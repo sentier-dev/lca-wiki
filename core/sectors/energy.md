@@ -3,8 +3,8 @@ title: Energy
 type: sector
 summary: "Fuel chains from extraction to combustion: what an LCA of the GICS Energy sector needs and which of this wiki's data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -44,9 +44,9 @@ conversion step plus a measured or reported emission profile; the rest is backgr
 This wiki covers the background in three places.
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  the `05-energy` folder holds the energy carriers, the largest process count of any
-  sector folder, with `03-chemicals` and `04-transport` supplying the process inputs
-  and the delivery steps (sentier-inventory-readme).
+  the `sector` value `energy` holds the energy carriers, the largest process count of
+  any sector, with `chemicals` and `transport` supplying the process inputs and the
+  delivery steps (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - the BAFU:2026 database, whose top-level process
   categories include `fuels`, `oil`, `natural gas`, `pipeline`, `biomass` and
   `underground deposit` (bafu-2026-release).
@@ -96,7 +96,7 @@ data usually lacks.
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `05-energy`, `03-chemicals`, `04-transport` |
+| Sentier inventory `sector` values | `energy`, `chemicals`, `transport` |
 | BAFU:2026 top-level process categories | fuels, oil, natural gas, pipeline, biomass, underground deposit |
 | ISIC Rev.4 sections | B (mining and quarrying), C (manufacturing, refined petroleum), D (electricity, gas, steam), H (transportation and storage) |
 

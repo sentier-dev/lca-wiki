@@ -3,8 +3,8 @@ title: sentier-brightway datasets
 type: module-page
 summary: The four pinned datasets sentier-brightway fetches, and the two shapes it writes them in.
 audience: [P1, P2]
-updated: 2026-09-21
-sources: [sentier-brightway-repo]
+updated: 2026-10-12
+sources: [sentier-brightway-repo, sentier-brightway-pr-3]
 related: [../../../bafu/README.md, ../sentier-methods/README.md]
 ---
 
@@ -17,14 +17,20 @@ amounts and no characterisation factor values appear on this page.
 
 ## BAFU-2026 life cycle inventory
 
-- **Version:** v1, 11,947 processes, pinned by commit in `sources.toml`
-- **Sectors:** eleven folders, ranked and numbered: agriculture, electricity, chemicals,
-  transport, energy, waste, construction, materials, electronics, building services, and
-  an obsolete folder kept for completeness
+- **Version:** v1, 11,947 processes, pinned by commit in `sources.toml`: at commit
+  `3239a4e` the pin is sentier-inventory `cf54f55`, three files under
+  `data/bafu-2026-v1/` instead of thirty-three sector files (source: sentier-brightway-pr-3)
+- **Sectors:** eleven values of the `sector` column, read from the folder's metadata and
+  kept on every process node: agriculture, electricity, chemicals, transport, energy,
+  waste, construction, materials, electronics, building services, and `obsolete` for the
+  legacy link targets kept for completeness
 - **Provenance:** published by the Swiss federal administration and delivered into the
-  platform by the importers; distributed through the sentier-inventory repository
-- **Schema:** two parquet tables per sector folder, processes and exchanges, plus a
-  metadata file; the columns are contracted in the inventory repository
+  platform by the importers; distributed through the sentier-inventory repository as the
+  source `bafu-2026`, release `v1`
+- **Schema:** one folder per published release of one datasource, holding two parquet
+  tables, processes and exchanges, plus a metadata file naming the source, its version
+  and the sectors present; the loader picks the folder by that metadata, and the columns
+  are contracted in the inventory repository
 - **Methods:** none; this is inventory only
 - **Vocabulary:** process and flow terms are IRIs in the Sentier vocabulary
 - **Source branch:** [../../../bafu/](../../../bafu/) for the database itself,
@@ -69,7 +75,7 @@ amounts and no characterisation factor values appear on this page.
 
 | Object | Content |
 |---|---|
-| inventory database | the 11,947 processes |
+| inventory database | the 11,947 processes, each tagged with its `source`, `source_version` and `sector` |
 | biosphere database | the EF 3.1 elementary flows, with inventory emissions relinked onto them |
 | residual database | the inventory flows with no EF 3.1 counterpart, exchanges intact, no factor |
 | methods | the 25 EF 3.1 impact categories, under the Sentier method prefix |

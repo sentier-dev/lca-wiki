@@ -3,8 +3,8 @@ title: Assess a building product in Real Estate
 type: use-case
 summary: "Take a construction product from bill of materials to a declaration and then into a building study: modules A1 to D, the take-off, and the operational energy that competes with it."
 audience: [P1]
-updated: 2026-09-22
-sources: [gics-2023, en-15804-2019, epd-pcr-2019-14, epd-international-pcr-library, ef-pef-method, bafu-2026-release, sentier-inventory-readme, ilcd-2010, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [gics-2023, en-15804-2019, epd-pcr-2019-14, epd-international-pcr-library, ef-pef-method, bafu-2026-release, sentier-inventory-readme, ilcd-2010, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../sectors/real-estate.md, ../standards/en-15804.md, prepare-an-epd.md, assess-a-material-in-materials.md, ../concepts/functional-unit.md]
 ---
@@ -40,10 +40,9 @@ are the two assumptions that decide comparability
   (epd-international-pcr-library). No PEFCR in the Commission's current list covers
   buildings; the closest listed rule is Synthetic Turf, a landscaping product rather than
   a building one (ef-pef-method).
-- **Tools and background data.** Sentier inventory folders `07-construction`, which
-  carries the largest exchange count of any sector folder, `10-building-services` for
-  installed technical equipment, `08-materials` for product content and `02-electricity`
-  for operation (sentier-inventory-readme); BAFU:2026 top-level categories `building
+- **Tools and background data.** Sentier inventory `sector` values `construction`, which
+  carries the largest exchange count of any sector, `building-services` for installed
+  technical equipment, `materials` for product content and `electricity` for operation (sentier-inventory-readme); BAFU:2026 top-level categories `building
   components`, `building processes`, `construction`, `construction materials`,
   `construction processes`, `construction waste`, `flooring`, `insulation materials` and
   `ventilation`, whose new and updated construction datasets, including construction
@@ -92,7 +91,7 @@ declarations, because the take-off mixes product-specific and generic data
    [../../sentier/modules/sentier-brightway/use-cases/](../../sentier/modules/sentier-brightway/use-cases/)
    and
    [../../brightway/modules/bw2data/use-cases/](../../brightway/modules/bw2data/use-cases/);
-   the inventory folders themselves are documented in
+   the inventory sectors themselves are documented in
    [../../sentier/modules/sentier-inventory/use-cases/](../../sentier/modules/sentier-inventory/use-cases/)
    and the BAFU release in [../../bafu/use-cases/](../../bafu/use-cases/).
 

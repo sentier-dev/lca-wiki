@@ -21,6 +21,9 @@ uvx --python 3.11 --from pydoc-markdown==4.8.2 pydoc-markdown \
 ```
 
 Generated file: do not edit by hand; regenerate with the command above.
+Exception recorded here: on 2026-10-12 the docstrings and the `load_inventory` signature
+below were updated by hand to commit `3239a4e` (pull request #3), which replaced the
+sector-folder reader with a source-folder one; the rest of the file is as generated.
 The output of that command is then passed through one mechanical pass: links
 the wiki cannot resolve are flattened to their text, absolute file paths become
 `<path>`, and names of private repositories become `<private>`.
@@ -31,7 +34,7 @@ the wiki cannot resolve are flattened to their text, absolute file paths become
 
 # sentier\_brightway.inventory
 
-Read sentier-inventory sector folders into two flat frames.
+Read one source folder of sentier-inventory (``data/<source>-<version>/``) into two frames.
 
 <a id="sentier_brightway.inventory.PROCESS_COLUMNS"></a>
 
@@ -62,15 +65,32 @@ class Inventory()
 
 #### exchanges
 
+<a id="sentier_brightway.inventory.Inventory.source_version"></a>
+
+#### source\_version
+
+``metadata.source_version`` of the folder read
+
+<a id="sentier_brightway.inventory.Inventory.sectors"></a>
+
+#### sectors
+
+``metadata.sectors`` of the folder read, sorted
+
 <a id="sentier_brightway.inventory.load_inventory"></a>
 
 #### load\_inventory
 
 ```python
-def load_inventory(data_root: Path) -> Inventory
+def load_inventory(data_root: Path,
+                   source: str = DEFAULT_SOURCE,
+                   source_version: str | None = None) -> Inventory
 ```
 
-Concatenate every ``data/<NN>-<sector>/`` folder of sentier-inventory.
+The processes and exchanges of one inventory ``source`` release.
 
-Sectors such as ``99-obsolete`` are intentionally included: their processes are
-still link targets for exchanges recorded in other sectors.
+sentier-inventory keeps one folder per published release, ``data/<source>-<version>/``,
+with ``sector`` as a column on the processes. Folder selection reads only each folder's
+``metadata.json`` (``source``, ``source_version``, ``sectors``), so other sources' parquet
+is never opened. Without ``source_version`` the source must be present exactly once; with
+it, that release is read. The ``sector`` column stays on the returned frame.

@@ -21,6 +21,9 @@ uvx --python 3.11 --from pydoc-markdown==4.8.2 pydoc-markdown \
 ```
 
 Generated file: do not edit by hand; regenerate with the command above.
+Exception recorded here: on 2026-10-12 the docstrings below were updated by hand to
+commit `a27910f` (pull request #29), one registry entry per release instead of per
+sector folder; the rest of the file is as generated.
 The output of that command is then passed through one mechanical pass: links
 the wiki cannot resolve are flattened to their text, absolute file paths become
 `<path>`, and names of private repositories become `<private>`.
@@ -31,7 +34,10 @@ the wiki cannot resolve are flattened to their text, absolute file paths become
 
 # sentier\_importers.sources.bafu.inventory\_exchanges
 
-BAFU-2026 -> sentier-inventory ``exchanges.parquet``, one registry entry per sector.
+BAFU-2026 -> sentier-inventory ``exchanges.parquet``, one registry entry per release.
+
+Every dataset's exchanges are emitted into the one source folder
+(``ecospold.SOURCE_FOLDER``); the sector lives on ``processes.parquet`` only.
 
 Flow ids: the production flow is the process's own UUID; technosphere
 inputs resolve through the export-wide ``number -> uuid`` map (exact — 0
@@ -47,7 +53,7 @@ vocabulary stay joinable by construction.
 class BafuInventoryExchangesSource(Source)
 ```
 
-Emit the exchange table rows for one sector folder.
+Emit the exchange table rows of the whole release.
 
 <a id="sentier_importers.sources.bafu.inventory_exchanges.BafuInventoryExchangesSource.parse"></a>
 

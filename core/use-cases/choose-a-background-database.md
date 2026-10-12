@@ -3,8 +3,8 @@ title: Choose a background database
 type: use-case
 summary: "Pick the background for a study on licence, coverage, system model and format: BAFU, ecoinvent or EF-compliant data sets, and how the tooling in this wiki reaches each."
 audience: [P1]
-updated: 2026-09-22
-sources: [ilcd-2010, bafu-2026-release, bafu-terms-of-use-2025, openlca-bafu-2026-notes, esu-bafu-database, ecoinvent-website, ecoinvent-licences, ecoinvent-kb-system-models, ecospold2-format, ef-compliant-data-guide-2.0, ef-data-guide-3.1-addendum, ef-transitional-guidance-2026, eplca-developer-ef, sentier-brightway-repo, sentier-methods-repo, sentier-inventory-readme, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [ilcd-2010, bafu-2026-release, bafu-terms-of-use-2025, openlca-bafu-2026-notes, esu-bafu-database, ecoinvent-website, ecoinvent-licences, ecoinvent-kb-system-models, ecospold2-format, ef-compliant-data-guide-2.0, ef-data-guide-3.1-addendum, ef-transitional-guidance-2026, eplca-developer-ef, sentier-brightway-repo, sentier-methods-repo, sentier-inventory-readme, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../concepts/foreground-and-background.md, ../concepts/data-quality.md, ../../bafu/README.md, ../../ecoinvent/README.md, map-flows-between-nomenclatures.md]
 ---
@@ -138,7 +138,7 @@ Not a database but a compliance class: a data set is EF compliant when it meets 
    guidance says what to do when it does not exist (ef-transitional-guidance-2026).
 
 3. **Check coverage against your sector page.** Each GICS sector page names the BAFU
-   top-level categories and the Sentier inventory folders that serve it; see
+   top-level categories and the Sentier inventory sectors that serve it; see
    [../sectors/](../sectors/) and the crosswalk table in
    [../sectors/crosswalk.md](../sectors/crosswalk.md).
 

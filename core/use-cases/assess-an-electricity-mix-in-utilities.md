@@ -3,8 +3,8 @@ title: Assess an electricity mix in Utilities
 type: use-case
 summary: "Model a delivered kilowatt-hour: voltage level, grid boundary, imports, generation technologies and the temporal resolution a yearly average hides."
 audience: [P1]
-updated: 2026-09-22
-sources: [gics-2023, bafu-2026-release, sentier-inventory-readme, epd-international-pcr-library, ef-pef-method, ilcd-2010, openlca-bafu-2026-notes, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [gics-2023, bafu-2026-release, sentier-inventory-readme, epd-international-pcr-library, ef-pef-method, ilcd-2010, openlca-bafu-2026-notes, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../sectors/utilities.md, ../concepts/functional-unit.md, ../concepts/uncertainty.md, choose-a-background-database.md, assess-an-energy-carrier-in-energy.md]
 ---
@@ -38,9 +38,9 @@ mix built here is reused, so it has to carry its own metadata.
   water supply (ef-pef-method). The International EPD System's PCR library carries
   `Electricity, steam & fuels`, which is the programme-rule family for a grid or a
   generation declaration (epd-international-pcr-library).
-- **Tools and background data.** Sentier inventory folders `02-electricity`, one of the
-  largest sector folders, with `05-energy` for the fuels behind it and `06-waste` for
-  wastewater and residues (sentier-inventory-readme); BAFU:2026 top-level categories
+- **Tools and background data.** Sentier inventory `sector` values `electricity`, one of
+  the largest sectors, with `energy` for the fuels behind it and `waste` for wastewater
+  and residues (sentier-inventory-readme); BAFU:2026 top-level categories
   `electricity`, `electricity by fuel`, `power plants`, `photovoltaic`, `wind power`,
   `impoundment`, `heat`, `heating`, `heat pumps`, `water`, `wastewater treatment`,
   `nuclear waste`, `incineration`, `landfill`, `waste` and `waste management`
@@ -93,7 +93,7 @@ as choice uncertainty rather than as stochastic spread
 
 5. **Install the background and build the mix as a linked process.** Loader:
    [../../sentier/modules/sentier-brightway/use-cases/](../../sentier/modules/sentier-brightway/use-cases/);
-   the `02-electricity` folder and its neighbours are documented in
+   the `electricity` sector and its neighbours are documented in
    [../../sentier/modules/sentier-inventory/use-cases/](../../sentier/modules/sentier-inventory/use-cases/);
    the BAFU release itself in [../../bafu/use-cases/](../../bafu/use-cases/). Holding the
    mix as a node with shares as exchanges is the job of

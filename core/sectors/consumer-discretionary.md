@@ -3,8 +3,8 @@ title: Consumer Discretionary
 type: sector
 summary: "Vehicles, durables, apparel and consumer services: what an LCA of the GICS Consumer Discretionary sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -45,8 +45,8 @@ Foreground data is a bill of materials, a manufacturing recipe and a use-phase
 behaviour model. Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `08-materials` and `09-electronics` for product content, `04-transport` for the
-  vehicle and distribution side, `06-waste` for end of life
+  the `sector` values `materials` and `electronics` for product content, `transport`
+  for the vehicle and distribution side, `waste` for end of life
   (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `textiles`,
   `private consumption`, `electronics`, `flooring` and `transport systems`
@@ -89,7 +89,7 @@ and read this page for what the sector adds to them. The gap is on
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `08-materials`, `09-electronics`, `04-transport`, `06-waste` |
+| Sentier inventory `sector` values | `materials`, `electronics`, `transport`, `waste` |
 | BAFU:2026 top-level process categories | textiles, private consumption, electronics, flooring, transport systems |
 | ISIC Rev.4 sections | C (manufacturing), G (wholesale and retail trade), I (accommodation and food service), P (education), S (other service activities) |
 

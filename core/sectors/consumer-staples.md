@@ -3,8 +3,8 @@ title: Consumer Staples
 type: sector
 summary: "Food, beverages, tobacco and household products: what an LCA of the GICS Consumer Staples sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -40,9 +40,9 @@ Foreground data is a farm or a factory inventory: yields, inputs, energy, and th
 emission model behind the field emissions. Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  the `01-agriculture` folder, which holds the highest-precedence rank in the
-  inventory, with `03-chemicals` for fertiliser and crop protection and `06-waste` for
-  residues and packaging waste (sentier-inventory-readme).
+  the `sector` value `agriculture`, the only sector that serves one GICS sector alone,
+  with `chemicals` for fertiliser and crop protection and `waste` for residues and
+  packaging waste (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `agricultural`,
   `food industry` and `landfarming` (bafu-2026-release).
 - [../../ecoinvent/](../../ecoinvent/) - structure only, no amounts.
@@ -85,7 +85,7 @@ data usually lacks.
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `01-agriculture`, `03-chemicals`, `06-waste` |
+| Sentier inventory `sector` values | `agriculture`, `chemicals`, `waste` |
 | BAFU:2026 top-level process categories | agricultural, food industry, landfarming |
 | ISIC Rev.4 sections | A (agriculture, forestry and fishing), C (manufacturing, food and beverages), G (wholesale and retail trade) |
 

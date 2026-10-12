@@ -3,16 +3,17 @@ title: sentier-brightway classes and functions
 type: module-page
 summary: The public surface of sentier-brightway, in the order a user meets it.
 audience: [P1, P3]
-updated: 2026-09-22
-sources: [sentier-brightway-repo]
+updated: 2026-10-12
+sources: [sentier-brightway-repo, sentier-brightway-pr-3]
 ---
 
 # sentier-brightway classes and functions
 
 Hand-written companion to the generated [api/](api/README.md) folder. The
 names below are the ones exported from `sentier_brightway/__init__.py` plus the few
-module-level helpers a user calls directly, read at commit `a9dba75`.
-(source: sentier-brightway-repo)
+module-level helpers a user calls directly, read at commit `a9dba75`; the inventory
+reader rows follow commit `3239a4e` (pull request #3, pending merge).
+(source: sentier-brightway-repo, sentier-brightway-pr-3)
 
 ## The public API
 
@@ -36,7 +37,8 @@ module-level helpers a user calls directly, read at commit `a9dba75`.
 | `fetch.resolve_data_root` | function | Picks the data root: an explicit path, the environment variable, or the verified download cache. | `assemble` |
 | `fetch.load_packaged_manifest` | function | Parses the pinned `sources.toml` into `Source` records. | `resolve_data_root`, the file-mode manifest |
 | `fetch.materialize` | function | Downloads every pinned file and checks its sha256 into the cache. | `resolve_data_root` |
-| `inventory.load_inventory` | function | Reads the sector folders into a processes frame and an exchanges frame. | `assemble` |
+| `inventory.load_inventory` | function | Reads the one source folder whose metadata names `source` (and `source_version` when given) into a processes frame, `sector` column kept, and an exchanges frame; errors list the source and version pairs present. | `assemble` |
+| `inventory.scan_source_folders` / `inventory.SourceFolder` | function, frozen dataclass | Describe every `data/*/` folder of the inventory by its `metadata.json` alone, source, version and sectors, without opening parquet. | `load_inventory` |
 | `flows.load_ef_flows` / `flows.load_bafu_flows` | functions | Read the elementary-flow terms of one upstream source out of the vocabulary shards. | `assemble` |
 | `methods.load_methods` | function | Reads the 25 methods and their global characterisation factors. | `assemble` |
 | `bridge.load_bridge` | function | Reads the ordered mapping packages into one source-code to target-flow mapping. | `assemble` |
@@ -67,6 +69,13 @@ module-level helpers a user calls directly, read at commit `a9dba75`.
   `import sentier_brightway` and the whole of file mode work without Brightway.
 - **`assemble` is the seam.** Anything that reads data returns a frame, anything that
   writes takes a `BuildResult`; tests exercise the middle without touching a project.
+- **Every entry point takes a source.** At commit `3239a4e` `assemble`, `coverage`,
+  `import_bafu_db` and `import_bafu_files` take `source="bafu-2026"` and
+  `source_version=None`; `import_db` and `import_files` are the same functions under
+  source-neutral names, and the `import_bafu_*` names are kept as thin wrappers. The
+  inventory and residual databases are named after the source, never the version, so a
+  re-release replaces an install in place and a second source installs beside it.
+  (source: sentier-brightway-pr-3)
 - **The errors are typed**: `fetch.FetchError` and `fetch.IntegrityError` for the data,
   `files.ExistingOutputError` for a non-empty output folder, `writer.ExistingDatabaseError`
   for a project that already holds the databases. The command line turns them into a

@@ -3,8 +3,8 @@ title: Industrials
 type: sector
 summary: "Capital goods, commercial services and transport: what an LCA of the GICS Industrials sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -46,8 +46,8 @@ Foreground data is a bill of materials plus a use-phase energy model for capital
 and a fleet and operations model for transport. The background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `04-transport` for transport processes, `08-materials` and `09-electronics` for the
-  bill of materials, `07-construction` and `10-building-services` for infrastructure
+  the `sector` values `transport` for transport processes, `materials` and `electronics`
+  for the bill of materials, `construction` and `building-services` for infrastructure
   and installed equipment (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `transport systems`,
   `mechanical`, `building processes`, `construction processes`, `compressed air` and
@@ -94,7 +94,7 @@ data usually lacks.
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `04-transport`, `07-construction`, `08-materials`, `09-electronics`, `10-building-services` |
+| Sentier inventory `sector` values | `transport`, `construction`, `materials`, `electronics`, `building-services` |
 | BAFU:2026 top-level process categories | transport systems, mechanical, building processes, construction processes, compressed air, recycling |
 | ISIC Rev.4 sections | C (manufacturing), E (water supply, sewerage, waste management), F (construction), H (transportation and storage), N (administrative and support services) |
 

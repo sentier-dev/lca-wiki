@@ -3,8 +3,8 @@ title: Information Technology
 type: sector
 summary: "Semiconductors, hardware and software services: what an LCA of the GICS Information Technology sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -42,9 +42,9 @@ Foreground data is a bill of materials with die area and process node for hardwa
 a utilisation and allocation model for services. Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `09-electronics`, which is the smallest sector folder by process count, with
-  `02-electricity` for the operating phase, `03-chemicals` for process gases and
-  `06-waste` for end of life (sentier-inventory-readme).
+  the `sector` value `electronics`, one of the smallest sectors by process count, with
+  `electricity` for the operating phase, `chemicals` for process gases and `waste` for
+  end of life (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `electronics`,
   `computers & network` and `electronics waste` (bafu-2026-release).
 - [../../ecoinvent/](../../ecoinvent/) - structure only, no amounts.
@@ -86,7 +86,7 @@ and read this page for what the sector adds to them. The gap is on
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `09-electronics`, `02-electricity`, `03-chemicals`, `06-waste` |
+| Sentier inventory `sector` values | `electronics`, `electricity`, `chemicals`, `waste` |
 | BAFU:2026 top-level process categories | electronics, computers & network, electronics waste |
 | ISIC Rev.4 sections | C (manufacturing, computer and electronic products), J (information and communication) |
 
