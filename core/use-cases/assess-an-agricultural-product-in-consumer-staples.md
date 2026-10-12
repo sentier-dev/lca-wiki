@@ -3,8 +3,8 @@ title: Assess an agricultural product in Consumer Staples
 type: use-case
 summary: "Model a food or beverage product where primary production decides the answer: field emissions, the crop and residue allocation, the milk and meat split, and the PEFCR that governs it."
 audience: [P1]
-updated: 2026-09-22
-sources: [gics-2023, ef-pef-method, eu-recommendation-2021-2279, epd-international-pcr-library, sentier-inventory-readme, bafu-2026-release, ilcd-2010, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [gics-2023, ef-pef-method, eu-recommendation-2021-2279, epd-international-pcr-library, sentier-inventory-readme, bafu-2026-release, ilcd-2010, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../sectors/consumer-staples.md, ../concepts/allocation-and-multifunctionality.md, run-a-pef-study.md, ../concepts/functional-unit.md, document-data-quality-and-uncertainty.md]
 ---
@@ -39,9 +39,9 @@ decision, which is precisely why the sector has category rules
   Food and Dairy Products, with Marine Fish in development (ef-pef-method). If a PEFCR exists, it
   should be used (eu-recommendation-2021-2279, section 2). The International EPD System's
   PCR library carries `Food & beverages` (epd-international-pcr-library).
-- **Tools and background data.** Sentier inventory folder `01-agriculture`, which holds
-  the highest-precedence rank in the inventory, with `03-chemicals` for fertiliser and
-  crop protection and `06-waste` for residues and packaging waste
+- **Tools and background data.** Sentier inventory `sector` value `agriculture`, the only
+  sector serving one GICS sector alone, with `chemicals` for fertiliser and crop
+  protection and `waste` for residues and packaging waste
   (sentier-inventory-readme); BAFU:2026 top-level categories `agricultural`,
   `food industry` and `landfarming` (bafu-2026-release).
 
@@ -91,7 +91,7 @@ that was outside the system last year may be inside it this year.
 
 5. **Install the background and link the farm gate to processing.** Loader:
    [../../sentier/modules/sentier-brightway/use-cases/](../../sentier/modules/sentier-brightway/use-cases/);
-   the `01-agriculture` folder and its rank precedence in
+   the `agriculture` sector and the source folder it sits in, in
    [../../sentier/modules/sentier-inventory/use-cases/](../../sentier/modules/sentier-inventory/use-cases/);
    the BAFU release in [../../bafu/use-cases/](../../bafu/use-cases/). For Agribalyse-facing
    work in this sector, the public module is

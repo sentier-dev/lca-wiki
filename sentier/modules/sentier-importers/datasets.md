@@ -3,23 +3,26 @@ title: sentier-importers datasets
 type: module-page
 summary: What the registered sources read, what they write, and into which target repository.
 audience: [P1, P2]
-updated: 2026-09-21
-sources: [sentier-importers-repo]
+updated: 2026-10-12
+sources: [sentier-importers-repo, sentier-importers-pr-29]
 ---
 
 # sentier-importers datasets
 
-The repository ships no dataset of its own. It ships 66 registered sources, read from
-`registry.yaml` at commit `dac2e67` on 2026-09-21, which read external data and deliver
-it into four target repositories. Descriptors stay broad: no amounts and no
-characterisation factor values appear on this page. (source: sentier-importers-repo)
+The repository ships no dataset of its own. It ships 46 registered sources, read from
+`registry.yaml` at commit `a27910f` on 2026-10-12, the head of branch
+`feat/source-folders` proposed as pull request #29 and not yet merged, which read
+external data and deliver it into four target repositories. There were 66 at commit
+`dac2e67` on 2026-09-21: the 22 per-sector inventory blocks of the Swiss federal family
+became two. Descriptors stay broad: no amounts and no characterisation factor values
+appear on this page. (source: sentier-importers-repo, sentier-importers-pr-29)
 
 ## Targets
 
 | Target repository | Sources delivering to it | Files land in | Validated by |
 |---|---|---|---|
 | sentier-vocab | 34 | the repository's data folder | its LinkML schema, at a pinned reference |
-| sentier-inventory | 23 | the repository's data folder | the target repository's own checker |
+| sentier-inventory | 3 | one folder per source release, `data/<source>-<source_version>/`, replaced whole on delivery | the target repository's own checker |
 | sentier-mappings | 7 | the repository's data folder | the randonneur package schema, in the source |
 | sentier-methods | 2 | the repository's data folder | the target repository's own checker |
 
@@ -29,14 +32,20 @@ The published data is documented on the target module pages:
 
 ## Source families
 
-### Swiss federal inventory (44 registered sources)
+### Swiss federal inventory (24 registered sources)
 
 - **Reads:** the published exchange-format inventory, from local paths.
 - **Writes:** process and elementary-flow vocabulary terms; processes and exchanges as
-  parquet, one pair per sector folder; and the flow bridge onto the EF 3.1 nomenclature
-  as ordered mapping packages, with a coverage sidecar.
-- **Sectors:** the eleven sector folders of the inventory, agriculture through building
-  services, plus an obsolete folder.
+  parquet, one pair in the inventory's source folder `data/bafu-2026-v1/`, from the two
+  registry blocks `bafu-processes` and `bafu-exchanges` with category `bafu-2026-v1`;
+  the folder's `metadata.json`, written by the local regeneration script from the
+  staged parquet and the publisher constants; and the flow bridge onto the EF 3.1
+  nomenclature as ordered mapping packages, with a coverage sidecar.
+- **Sectors:** every dataset is emitted, and its sector is written into the `sector`
+  column of the process table from the map of BAFU categories onto the inventory's
+  eleven sector ids, agriculture through building-services plus obsolete. A delivery
+  replaces the source folder whole; sources never share a folder.
+  (source: sentier-importers-pr-29)
 - **Source branch:** [../../../bafu/](../../../bafu/)
 
 ### Agribalyse and the EF 3.1 reference package (15 registered sources)

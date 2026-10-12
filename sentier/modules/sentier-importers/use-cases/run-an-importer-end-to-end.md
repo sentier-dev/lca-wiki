@@ -3,8 +3,8 @@ title: Run an importer end to end
 type: use-case
 summary: "Run the reference plugin through the full staged pipeline offline, inspect the staged output, and see where a delivery would go."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [sentier-importers-repo]
+updated: 2026-10-12
+sources: [sentier-importers-repo, sentier-importers-pr-29]
 verified: yes
 verified_on: 2026-09-22
 verified_env: "uv 0.11.14, Python 3.10.12, Ubuntu 22.04, sentier-importers 0.0.1 from a clone, throwaway cache and output directories, no network needed"
@@ -65,7 +65,8 @@ new plugin is copied from, and it is the only source enabled by default.
 ## Expected output
 
 Step 1 prints one line per registered source: its name, the target repository and
-category it writes into, and whether it is enabled. There are 66 of them and exactly one
+category it writes into, and whether it is enabled. There are 46 of them at commit
+`a27910f` (66 before the per-sector inventory blocks collapsed into two) and exactly one
 is enabled, which is why the run-everything smoke test stays fast.
 
 Step 2 prints the source name and the number of valid rows, three for the reference
@@ -77,11 +78,13 @@ each normalised into the shape the plugin's `transform` declares. It is a toy sh
 an [LCI](../../../../vocabulary.md#lci) shape, on purpose.
 
 Step 5 puts the same file into the target repository's data folder in your checkout, so
-`git diff` there shows exactly what a pull request would propose.
+`git diff` there shows exactly what a pull request would propose. For the inventory
+target the category is the source folder, and a real delivery such as the two `bafu-*`
+inventory sources replaces `data/bafu-2026-v1/` whole. (source: sentier-importers-pr-29)
 
 ## Pitfalls
 
-- **Most sources will not run for you.** 65 of the 66 are disabled, and several of the
+- **Most sources will not run for you.** 45 of the 46 are disabled, and several of the
   disabled ones read local paths holding licensed or large inputs. Naming one of those
   explicitly fails on a missing file, not on a bug.
 - **A run is a dry run.** Nothing leaves the staging folder without `--deliver`, and
@@ -102,7 +105,7 @@ Step 5 puts the same file into the target repository's data folder in your check
 [schema](../../../../vocabulary.md#schema),
 [nomenclature](../../../../vocabulary.md#nomenclature),
 [randonneur package](../../../../vocabulary.md#randonneur-package),
-[sector folder](../../../../vocabulary.md#sector-folder).
+[source folder](../../../../vocabulary.md#source-folder).
 
 ## Verification
 
@@ -112,4 +115,5 @@ network reachable from the plugin. Steps 1 to 4 were executed as written and too
 3.9 s, 3.3 s and under a second. Step 1 listed 66 sources with one enabled; step 2
 reported three valid rows; step 3 wrote one JSON file holding three records with the
 fields `id`, `label` and `region`. Step 5 was not run, because it writes into a checkout
-of another repository.
+of another repository. Step 1 was run again on 2026-10-12 at commit `a27910f` and listed
+46 sources with one enabled; the other steps were not repeated.

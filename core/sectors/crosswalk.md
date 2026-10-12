@@ -1,10 +1,10 @@
 ---
 title: Sector crosswalk
 type: sector
-summary: "Maps each GICS sector onto the Sentier inventory sector folders, the BAFU:2026 process categories and the ISIC Rev.4 sections."
+summary: "Maps each GICS sector onto the Sentier inventory sector values, the BAFU:2026 process categories and the ISIC Rev.4 sections."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [energy.md, materials.md, industrials.md, consumer-discretionary.md, consumer-staples.md, health-care.md, financials.md, information-technology.md, communication-services.md, utilities.md, real-estate.md]
 ---
 
@@ -16,7 +16,7 @@ how they line up, and where they do not.
 | Taxonomy | What it classifies | Levels | Source |
 |---|---|---|---|
 | GICS | companies, by the business they earn from | 11 sectors, 25 industry groups, 74 industries, 163 sub-industries | gics-2023 |
-| Sentier inventory folders | inventory rows, by sector of the process | 11 folders, ranked by a numeric prefix | sentier-inventory-readme |
+| Sentier inventory sectors | inventory rows, by sector of the process | 11 values of the `sector` column, in one source folder today | sentier-inventory-readme |
 | BAFU:2026 process categories | processes in the openLCA package, by subject | 59 top-level categories in the v1.1 package, nested further; see the note below on the count | bafu-2026-release |
 | ISIC Rev.4 | economic activities, by kind of activity | 21 sections A to U, then divisions | unsd-isic-rev4 |
 
@@ -32,11 +32,15 @@ digit code. The structure in this wiki is the March 2023 one, after the review t
 carved Real Estate out of Financials and turned Telecommunication Services into
 Communication Services (gics-2023).
 
-**Sentier inventory folders.** `data/<NN>-<sector>/`, one folder per sector, each with
-`processes.parquet`, `exchanges.parquet` and `metadata.json`. The `NN` prefix sets
-resolution precedence: the lower rank wins when records overlap. Inventory is organised
-by sector and not by data source, and background databases that exist only as link
-targets are not folders (sentier-inventory-readme).
+**Sentier inventory sectors.** The `sector` column of `processes.parquet`, eleven
+enumerated values, inside one folder per published release of one datasource,
+`data/<source>-<source_version>/` (today only `data/bafu-2026-v1/`), each folder holding
+`processes.parquet`, `exchanges.parquet` and `metadata.json`. Inventory is organised by
+source with the sector as a row attribute; there is no rank and no precedence between
+folders, and background databases that exist only as link targets are not folders. Until
+2026-10-12 the sector was a numbered folder, `data/<NN>-<sector>/`, whose rank prefix set
+precedence; that layout was dropped because sector files from several sources did not
+stack (sentier-inventory-readme, sentier-inventory-pr-5).
 
 **BAFU:2026 process categories.** The openLCA package of the Swiss Federal
 Administration LCI database carries a category tree; its process branch has 59 top-level
@@ -68,19 +72,19 @@ with environmentally extended input-output work.
 Read a row as "a study in this GICS sector usually draws on these". A cell saying
 "none" means no entry of that taxonomy corresponds, not that the sector is unimportant.
 
-| GICS sector | Sentier inventory folders | BAFU:2026 top-level process categories | ISIC Rev.4 sections |
+| GICS sector | Sentier inventory `sector` values | BAFU:2026 top-level process categories | ISIC Rev.4 sections |
 |---|---|---|---|
-| [Energy](energy.md) | `05-energy`, `03-chemicals`, `04-transport` | `fuels`, `oil`, `natural gas`, `pipeline`, `biomass`, `underground deposit` | B, C, D, H |
-| [Materials](materials.md) | `08-materials`, `03-chemicals`, `07-construction` | `metals`, `minerals`, `chemicals`, `plastics`, `glass`, `ceramics`, `wood`, `paper+ board`, `cardboard`, `construction materials`, `insulation materials` | B, C |
-| [Industrials](industrials.md) | `04-transport`, `07-construction`, `08-materials`, `09-electronics`, `10-building-services` | `transport systems`, `mechanical`, `building processes`, `construction processes`, `compressed air`, `recycling` | C, E, F, H, N |
-| [Consumer Discretionary](consumer-discretionary.md) | `08-materials`, `09-electronics`, `04-transport`, `06-waste` | `textiles`, `private consumption`, `electronics`, `flooring`, `transport systems` | C, G, I, P, S |
-| [Consumer Staples](consumer-staples.md) | `01-agriculture`, `03-chemicals`, `06-waste` | `agricultural`, `food industry`, `landfarming` | A, C, G |
-| [Health Care](health-care.md) | `03-chemicals`, `09-electronics`, `06-waste` | `chemicals`, `incineration` | C, Q |
+| [Energy](energy.md) | `energy`, `chemicals`, `transport` | `fuels`, `oil`, `natural gas`, `pipeline`, `biomass`, `underground deposit` | B, C, D, H |
+| [Materials](materials.md) | `materials`, `chemicals`, `construction` | `metals`, `minerals`, `chemicals`, `plastics`, `glass`, `ceramics`, `wood`, `paper+ board`, `cardboard`, `construction materials`, `insulation materials` | B, C |
+| [Industrials](industrials.md) | `transport`, `construction`, `materials`, `electronics`, `building-services` | `transport systems`, `mechanical`, `building processes`, `construction processes`, `compressed air`, `recycling` | C, E, F, H, N |
+| [Consumer Discretionary](consumer-discretionary.md) | `materials`, `electronics`, `transport`, `waste` | `textiles`, `private consumption`, `electronics`, `flooring`, `transport systems` | C, G, I, P, S |
+| [Consumer Staples](consumer-staples.md) | `agriculture`, `chemicals`, `waste` | `agricultural`, `food industry`, `landfarming` | A, C, G |
+| [Health Care](health-care.md) | `chemicals`, `electronics`, `waste` | `chemicals`, `incineration` | C, Q |
 | [Financials](financials.md) | none | none | K |
-| [Information Technology](information-technology.md) | `09-electronics`, `02-electricity`, `03-chemicals`, `06-waste` | `electronics`, `computers & network`, `electronics waste` | C, J |
-| [Communication Services](communication-services.md) | `02-electricity`, `09-electronics`, `07-construction` | `computers & network`, `electricity` | J, R |
-| [Utilities](utilities.md) | `02-electricity`, `05-energy`, `06-waste` | `electricity`, `electricity by fuel`, `power plants`, `photovoltaic`, `wind power`, `impoundment`, `heat`, `heating`, `heat pumps`, `water`, `wastewater treatment`, `nuclear waste`, `incineration`, `landfill`, `waste`, `waste management` | D, E |
-| [Real Estate](real-estate.md) | `07-construction`, `10-building-services`, `08-materials`, `02-electricity` | `building components`, `building processes`, `construction`, `construction materials`, `construction processes`, `construction waste`, `flooring`, `insulation materials`, `ventilation` | F, L |
+| [Information Technology](information-technology.md) | `electronics`, `electricity`, `chemicals`, `waste` | `electronics`, `computers & network`, `electronics waste` | C, J |
+| [Communication Services](communication-services.md) | `electricity`, `electronics`, `construction` | `computers & network`, `electricity` | J, R |
+| [Utilities](utilities.md) | `electricity`, `energy`, `waste` | `electricity`, `electricity by fuel`, `power plants`, `photovoltaic`, `wind power`, `impoundment`, `heat`, `heating`, `heat pumps`, `water`, `wastewater treatment`, `nuclear waste`, `incineration`, `landfill`, `waste`, `waste management` | D, E |
+| [Real Estate](real-estate.md) | `construction`, `building-services`, `materials`, `electricity` | `building components`, `building processes`, `construction`, `construction materials`, `construction processes`, `construction waste`, `flooring`, `insulation materials`, `ventilation` | F, L |
 
 The ISIC section letters stand for: A agriculture, forestry and fishing; B mining and
 quarrying; C manufacturing; D electricity, gas, steam and air conditioning supply;
@@ -92,27 +96,27 @@ activities; N administrative and support service activities; P education; Q huma
 and social work activities; R arts, entertainment and recreation; S other service
 activities (unsd-isic-rev4).
 
-## Sentier inventory folders to GICS
+## Sentier inventory sectors to GICS
 
 The reverse direction, which is what a reader holding a parquet file needs.
 
-| Folder | GICS sectors it mainly serves |
+| `sector` value | GICS sectors it mainly serves |
 |---|---|
-| `01-agriculture` | Consumer Staples |
-| `02-electricity` | Utilities, Information Technology, Communication Services, Real Estate |
-| `03-chemicals` | Materials, Consumer Staples, Health Care, Energy, Information Technology |
-| `04-transport` | Industrials, Consumer Discretionary, Energy |
-| `05-energy` | Energy, Utilities |
-| `06-waste` | Utilities, Consumer Discretionary, Health Care, Information Technology |
-| `07-construction` | Real Estate, Industrials, Materials, Communication Services |
-| `08-materials` | Materials, Consumer Discretionary, Industrials, Real Estate |
-| `09-electronics` | Information Technology, Consumer Discretionary, Communication Services, Health Care |
-| `10-building-services` | Real Estate, Industrials |
-| `99-obsolete` | none; it holds legacy link targets rather than a sector (sentier-inventory-readme) |
+| `agriculture` | Consumer Staples |
+| `electricity` | Utilities, Information Technology, Communication Services, Real Estate |
+| `chemicals` | Materials, Consumer Staples, Health Care, Energy, Information Technology |
+| `transport` | Industrials, Consumer Discretionary, Energy |
+| `energy` | Energy, Utilities |
+| `waste` | Utilities, Consumer Discretionary, Health Care, Information Technology |
+| `construction` | Real Estate, Industrials, Materials, Communication Services |
+| `materials` | Materials, Consumer Discretionary, Industrials, Real Estate |
+| `electronics` | Information Technology, Consumer Discretionary, Communication Services, Health Care |
+| `building-services` | Real Estate, Industrials |
+| `obsolete` | none; it marks legacy link targets rather than a sector (sentier-inventory-readme) |
 
-No folder corresponds to Financials, and no folder is exclusive to one GICS sector
-except `01-agriculture`. Where two folders could supply the same record, the lower rank
-prefix wins (sentier-inventory-readme).
+No sector value corresponds to Financials, and none is exclusive to one GICS sector
+except `agriculture`. A sector is a filter on the column, not a folder, so there is no
+precedence to resolve between sectors (sentier-inventory-readme).
 
 ## BAFU:2026 top-level process categories to GICS
 
@@ -177,10 +181,10 @@ the first-choice sector page and the sector pages repeat the full lists.
 | `wind power` | Utilities |
 | `wood` | Materials |
 | `Others` | none; a residual bucket |
-| `energy, obsolete` | none; legacy, maps to `99-obsolete` |
-| `material, obsolete` | none; legacy, maps to `99-obsolete` |
-| `processing, obsolete` | none; legacy, maps to `99-obsolete` |
-| `waste treatment, obsolete` | none; legacy, maps to `99-obsolete` |
+| `energy, obsolete` | none; legacy, maps to `obsolete` |
+| `material, obsolete` | none; legacy, maps to `obsolete` |
+| `processing, obsolete` | none; legacy, maps to `obsolete` |
+| `waste treatment, obsolete` | none; legacy, maps to `obsolete` |
 
 ## What does not map
 
@@ -188,10 +192,10 @@ the first-choice sector page and the sector pages repeat the full lists.
   impact is a financed portfolio, which is an attribution of other sectors rather than an
   inventory; see [financials.md](financials.md).
 - **Commercial and professional services** inside Industrials, and **media** inside
-  Communication Services, have activities in ISIC but no dedicated inventory folder or
+  Communication Services, have activities in ISIC but no dedicated inventory sector or
   BAFU category.
-- **`99-obsolete`** and the four BAFU categories ending in `obsolete` are version
-  artefacts, not sectors. They exist so that older references still resolve. `Others` is
+- **The `obsolete` sector value** and the four BAFU categories ending in `obsolete` are
+  version artefacts, not sectors. They exist so that older references still resolve. `Others` is
   a residual bucket rather than a legacy one.
 - **ISIC sections M, O, T and U** (professional and scientific activities, public
   administration, household activities, extraterritorial bodies) have no GICS sector at
@@ -200,7 +204,7 @@ the first-choice sector page and the sector pages repeat the full lists.
 ## How to extend this page
 
 Add a sector page and its row here in the same change, as
-[README.md](README.md) requires. When a new Sentier inventory folder appears, add it to
-the reverse table and to every GICS row it serves; when a BAFU release changes its
+[README.md](README.md) requires. When a new Sentier inventory `sector` value appears in
+the schema enumeration, add it to the reverse table and to every GICS row it serves; when a BAFU release changes its
 category tree, re-read the package and update the third table with a new access date on
 the source row in [../../sources.md](../../sources.md). Keep "none" where it is true.

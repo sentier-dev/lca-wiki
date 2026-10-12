@@ -21,6 +21,9 @@ uvx --python 3.11 --from pydoc-markdown==4.8.2 pydoc-markdown \
 ```
 
 Generated file: do not edit by hand; regenerate with the command above.
+Exception recorded here: on 2026-10-12 the docstrings below were updated by hand to
+commit `a27910f` (pull request #29), one registry entry per release instead of per
+sector folder; the rest of the file is as generated.
 The output of that command is then passed through one mechanical pass: links
 the wiki cannot resolve are flattened to their text, absolute file paths become
 `<path>`, and names of private repositories become `<private>`.
@@ -31,11 +34,12 @@ the wiki cannot resolve are flattened to their text, absolute file paths become
 
 # sentier\_importers.sources.bafu.inventory\_processes
 
-BAFU-2026 -> sentier-inventory ``processes.parquet``, one registry entry per sector.
+BAFU-2026 -> sentier-inventory ``processes.parquet``, one registry entry per release.
 
-Each entry's ``category`` is the sector folder (``NN-<sector>``); ``transform``
-keeps only the datasets whose BAFU category routes there. Rows follow the
-sentier-inventory ``schema/process.yaml`` contract exactly.
+The entry's ``category`` is the source folder (``ecospold.SOURCE_FOLDER``,
+``data/bafu-2026-v1/``); ``transform`` emits every dataset and writes the sector
+its BAFU category routes to into the ``sector`` column. Rows follow the
+sentier-inventory ``schema/process.yaml`` contract exactly, column order included.
 
 <a id="sentier_importers.sources.bafu.inventory_processes.process_comment"></a>
 
@@ -55,7 +59,7 @@ Provenance comment: BAFU category path, obsolete marker, source citation.
 class BafuInventoryProcessesSource(Source)
 ```
 
-Emit the process table rows for one sector folder.
+Emit the process table rows of the whole release, sector as a column.
 
 <a id="sentier_importers.sources.bafu.inventory_processes.BafuInventoryProcessesSource.parse"></a>
 

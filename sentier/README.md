@@ -3,7 +3,7 @@ title: sentier
 type: branch
 summary: "The Sentier platform branch: what it is, its modules, and how its data reaches Brightway."
 audience: [P1, P2, P3]
-updated: 2026-09-21
+updated: 2026-10-12
 sources: [sentier-dev-repo, sentier-dev-adr-1, sentier-brightway-repo, sentier-importers-repo]
 related: [platform.md, commands.md, modules/README.md]
 ---
@@ -52,7 +52,7 @@ branch. (source: sentier-importers-repo, sentier-brightway-repo)
 | [modules/sentier-brightway/](modules/sentier-brightway/) | Application | The loader that installs the platform data into a Brightway project, or writes it as plain files. |
 | [modules/sentier-agribalyse/](modules/sentier-agribalyse/) | Application | The public Agribalyse-facing work of the platform. |
 | [modules/sentier-vocab/](modules/sentier-vocab/) | Data | The controlled vocabulary: one IRI per term, with the schemas that define each term type. |
-| [modules/sentier-inventory/](modules/sentier-inventory/) | Data | The life cycle inventory, processes and exchanges as parquet, organised per sector. |
+| [modules/sentier-inventory/](modules/sentier-inventory/) | Data | The life cycle inventory, processes and exchanges as parquet, one folder per source release with the sector as a column. |
 | [modules/sentier-methods/](modules/sentier-methods/) | Data | The impact assessment methods and their characterisation factor tables. |
 | [modules/sentier-mappings/](modules/sentier-mappings/) | Cross-cutting | The bridge packages that map one nomenclature onto another, as reviewable data. |
 

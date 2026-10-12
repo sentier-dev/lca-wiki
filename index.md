@@ -382,7 +382,7 @@ When you add, rename or remove a page, edit this file.
 - [Communication Services](core/sectors/communication-services.md) — Telecommunication networks, media and interactive services: what an LCA of the GICS Communication Services sector needs and which data sources cover it.
 - [Consumer Discretionary](core/sectors/consumer-discretionary.md) — Vehicles, durables, apparel and consumer services: what an LCA of the GICS Consumer Discretionary sector needs and which data sources cover it.
 - [Consumer Staples](core/sectors/consumer-staples.md) — Food, beverages, tobacco and household products: what an LCA of the GICS Consumer Staples sector needs and which data sources cover it.
-- [Sector crosswalk](core/sectors/crosswalk.md) — Maps each GICS sector onto the Sentier inventory sector folders, the BAFU:2026 process categories and the ISIC Rev.4 sections.
+- [Sector crosswalk](core/sectors/crosswalk.md) — Maps each GICS sector onto the Sentier inventory sector values, the BAFU:2026 process categories and the ISIC Rev.4 sections.
 - [Energy](core/sectors/energy.md) — Fuel chains from extraction to combustion: what an LCA of the GICS Energy sector needs and which of this wiki's data sources cover it.
 - [Financials](core/sectors/financials.md) — Banks, financial services and insurance: why a product LCA rarely fits the GICS Financials sector, and what this wiki does and does not cover.
 - [Health Care](core/sectors/health-care.md) — Pharmaceuticals, devices and care delivery: what an LCA of the GICS Health Care sector needs and which data sources cover it.
@@ -525,19 +525,19 @@ When you add, rename or remove a page, edit this file.
 
 ### sentier/modules/sentier-inventory/
 
-- [sentier-inventory](sentier/modules/sentier-inventory/README.md) — The platform's life cycle inventory: processes and exchanges as parquet, one folder per sector, with a schema contract and a CI validator.
-- [sentier-inventory schema contracts and validator](sentier/modules/sentier-inventory/classes.md) — The public surface of a data-only repository: three table contracts, one metadata schema, one validation script.
-- [sentier-inventory commands](sentier/modules/sentier-inventory/commands.md) — The validator, the inspection one-liner, and what continuous integration runs.
-- [sentier-inventory datasets](sentier/modules/sentier-inventory/datasets.md) — The BAFU-2026 inventory as the platform ships it: eleven sector folders, two tables per folder, flow identifiers that carry their unit.
-- [sentier-inventory gotchas](sentier/modules/sentier-inventory/gotchas.md) — What surprises people: the obsolete folder, per-folder guarantees, absent optional columns and flow identifiers that match nothing else.
-- [sentier-inventory layout](sentier/modules/sentier-inventory/layout.md) — The repository tree: eleven sector folders, four schema files, one validator.
-- [sentier-inventory status](sentier/modules/sentier-inventory/status.md) — Where the inventory repository stands: one source database, eleven sectors, unit processes only.
+- [sentier-inventory](sentier/modules/sentier-inventory/README.md) — The platform's life cycle inventory: processes and exchanges as parquet, one folder per source release with the sector as a column, a schema contract and a CI validator.
+- [sentier-inventory schema contracts and validator](sentier/modules/sentier-inventory/classes.md) — The public surface of a data-only repository: two table contracts, one metadata schema, one validation script.
+- [sentier-inventory commands](sentier/modules/sentier-inventory/commands.md) — The validator, the inspection one-liners, and what continuous integration runs.
+- [sentier-inventory datasets](sentier/modules/sentier-inventory/datasets.md) — The BAFU-2026 inventory as the platform ships it: one source folder, two tables and a metadata file, the sector as a column, flow identifiers that carry their unit.
+- [sentier-inventory gotchas](sentier/modules/sentier-inventory/gotchas.md) — What surprises people: a layout change pending merge, the obsolete sector, per-folder guarantees, absent optional columns and flow identifiers that match nothing else.
+- [sentier-inventory layout](sentier/modules/sentier-inventory/layout.md) — The repository tree: one source folder, four schema files, one validator.
+- [sentier-inventory status](sentier/modules/sentier-inventory/status.md) — Where the inventory repository stands: one source folder, schema 0.3.0 on an open pull request, unit processes only.
 
 ### sentier/modules/sentier-inventory/use-cases/
 
 - [sentier-inventory use cases](sentier/modules/sentier-inventory/use-cases/README.md) — End-to-end things a practitioner does with the Sentier inventory data.
-- [Read a sector folder with pandas](sentier/modules/sentier-inventory/use-cases/read-a-sector-folder-with-pandas.md) — Open one sector's processes and exchanges parquet in a dataframe, check them against the folder's declared row counts, and see the contracted columns.
-- [Validate the inventory schema](sentier/modules/sentier-inventory/use-cases/validate-the-inventory-schema.md) — Run the repository's own validator over every sector folder, the same command continuous integration runs on every pull request.
+- [Read a source folder with pandas](sentier/modules/sentier-inventory/use-cases/read-a-source-folder-with-pandas.md) — Open one source's processes and exchanges parquet in a dataframe, check them against the folder's declared row counts and sectors, filter one sector out of the column, and see the contracted columns.
+- [Validate the inventory schema](sentier/modules/sentier-inventory/use-cases/validate-the-inventory-schema.md) — Run the repository's own validator over every source folder, the same command continuous integration runs on every pull request.
 
 ### sentier/modules/sentier-mappings/
 

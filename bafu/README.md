@@ -3,7 +3,7 @@ title: bafu
 type: branch
 summary: "The BAFU LCA database as an external data source: what it is, how to get it, what it covers."
 audience: [P1, P2]
-updated: 2026-09-21
+updated: 2026-10-12
 sources: [bafu-2026-release, openlca-bafu-2026-notes, bafu-terms-of-use-2025, esu-bafu-database]
 related: [../sentier/modules/sentier-inventory/README.md, ../core/sectors/README.md]
 ---
@@ -66,8 +66,9 @@ with no warranty (source: bafu-terms-of-use-2025). The full reading is in
 
 ## How the tooling in this wiki reaches it
 
-The Sentier platform ships this database as the `bafu-2026` inventory package. The
-package and the way its data is written is documented on its own module page,
+The Sentier platform ships this database as the inventory source `bafu-2026`, release
+`v1`, one folder `data/bafu-2026-v1/` with the sector of every process as a column. The
+folder and the way its data is written is documented on its own module page,
 [../sentier/modules/sentier-inventory/](../sentier/modules/sentier-inventory/); the
 loader that installs it into a Brightway project or a folder of plain files is
 [../sentier/modules/sentier-brightway/](../sentier/modules/sentier-brightway/). Neither is

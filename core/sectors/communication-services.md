@@ -3,8 +3,8 @@ title: Communication Services
 type: sector
 summary: "Telecommunication networks, media and interactive services: what an LCA of the GICS Communication Services sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -40,8 +40,8 @@ Foreground data is a network topology with per-element power draw and a traffic 
 Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `02-electricity` for the operating phase, `09-electronics` for network and terminal
-  equipment, `07-construction` for masts, ducts and buildings
+  the `sector` values `electricity` for the operating phase, `electronics` for network
+  and terminal equipment, `construction` for masts, ducts and buildings
   (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `computers & network`
   and `electricity` (bafu-2026-release).
@@ -84,7 +84,7 @@ and read this page for what the sector adds to them. The gap is on
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `02-electricity`, `09-electronics`, `07-construction` |
+| Sentier inventory `sector` values | `electricity`, `electronics`, `construction` |
 | BAFU:2026 top-level process categories | computers & network, electricity |
 | ISIC Rev.4 sections | J (information and communication), R (arts, entertainment and recreation) |
 

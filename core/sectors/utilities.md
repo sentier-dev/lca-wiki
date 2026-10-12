@@ -3,8 +3,8 @@ title: Utilities
 type: sector
 summary: "Electricity, gas, water and heat supply: what an LCA of the GICS Utilities sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -38,8 +38,9 @@ Foreground data is a plant or a network model: generation by technology, losses,
 capacity factors, and the treatment train for water. Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `02-electricity`, one of the largest sector folders and the Brightcon deliverable,
-  with `05-energy` for the fuels behind it and `06-waste` for wastewater and residues
+  the `sector` value `electricity`, one of the largest sectors and the Brightcon
+  deliverable, with `energy` for the fuels behind it and `waste` for wastewater and
+  residues
   (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `electricity`,
   `electricity by fuel`, `power plants`, `photovoltaic`, `wind power`, `impoundment`,
@@ -87,7 +88,7 @@ data usually lacks.
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `02-electricity`, `05-energy`, `06-waste` |
+| Sentier inventory `sector` values | `electricity`, `energy`, `waste` |
 | BAFU:2026 top-level process categories | electricity, electricity by fuel, power plants, photovoltaic, wind power, impoundment, heat, heating, heat pumps, water, wastewater treatment, nuclear waste, incineration, landfill, waste, waste management |
 | ISIC Rev.4 sections | D (electricity, gas, steam and air conditioning supply), E (water supply; sewerage, waste management and remediation) |
 

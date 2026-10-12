@@ -3,7 +3,7 @@ title: Fetching a BAFU release
 type: database
 summary: Where the files are, why the download cannot be fully automated, and how to verify and unpack them.
 audience: [P1, P3]
-updated: 2026-09-21
+updated: 2026-10-12
 sources: [bafu-2026-release, openlca-bafu-2026-notes, bafu-terms-of-use-2025]
 related: [../knowledge/access-and-licence.md, ../knowledge/format.md]
 ---
@@ -83,8 +83,8 @@ hundreds of megabytes. Keep the downloads in a directory of your own, keep the
 
 - openLCA: import the `.zolca` file.
 - Brightway and anything else in this wiki's tooling: the Sentier platform ships this
-  database as the `bafu-2026` inventory package, and that route is documented on its own
-  module page, [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/),
+  database as the inventory source `bafu-2026`, one folder `data/bafu-2026-v1/` with the
+  sector as a column, and that route is documented on its own module page, [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/),
   with the loader at
   [../../sentier/modules/sentier-brightway/](../../sentier/modules/sentier-brightway/).
 - Your own importer: write it against the ecoSpold v1 archive, and read

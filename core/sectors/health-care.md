@@ -3,8 +3,8 @@ title: Health Care
 type: sector
 summary: "Pharmaceuticals, devices and care delivery: what an LCA of the GICS Health Care sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -39,8 +39,8 @@ Foreground data is a synthesis route or a device bill of materials, plus a facil
 energy model. Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `03-chemicals` for synthesis inputs, `09-electronics` for instrumented devices,
-  `06-waste` for clinical waste routes (sentier-inventory-readme).
+  the `sector` values `chemicals` for synthesis inputs, `electronics` for instrumented
+  devices, `waste` for clinical waste routes (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `chemicals` and
   `incineration` (bafu-2026-release).
 - [../../ecoinvent/](../../ecoinvent/) - structure only, no amounts.
@@ -84,7 +84,7 @@ and read this page for what the sector adds to them. The gap is on
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `03-chemicals`, `09-electronics`, `06-waste` |
+| Sentier inventory `sector` values | `chemicals`, `electronics`, `waste` |
 | BAFU:2026 top-level process categories | chemicals, incineration |
 | ISIC Rev.4 sections | C (manufacturing, pharmaceuticals and medical devices), Q (human health and social work activities) |
 

@@ -3,8 +3,8 @@ title: Real Estate
 type: sector
 summary: "Buildings and property over a reference study period: what an LCA of the GICS Real Estate sector needs and which data sources cover it."
 audience: [P1, P2]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, ef-pef-method, sentier-inventory-readme, bafu-2026-release, unsd-isic-rev4, sentier-inventory-pr-5]
 related: [crosswalk.md, ../../bafu/, ../../sentier/modules/sentier-inventory/]
 ---
 
@@ -42,9 +42,9 @@ Foreground data is a quantity take-off of the building plus an energy model of i
 operation. Background:
 
 - [../../sentier/modules/sentier-inventory/](../../sentier/modules/sentier-inventory/) -
-  `07-construction`, which carries the largest exchange count of any sector folder,
-  with `10-building-services` for installed technical equipment, `08-materials` for
-  product content and `02-electricity` for operation (sentier-inventory-readme).
+  the `sector` value `construction`, which carries the largest exchange count of any
+  sector, with `building-services` for installed technical equipment, `materials` for
+  product content and `electricity` for operation (sentier-inventory-readme).
 - [../../bafu/](../../bafu/) - BAFU:2026 top-level categories `building components`,
   `building processes`, `construction`, `construction materials`,
   `construction processes`, `construction waste`, `flooring`, `insulation materials`
@@ -92,7 +92,7 @@ data usually lacks.
 
 | Taxonomy | This sector maps onto |
 |---|---|
-| Sentier inventory folders | `07-construction`, `10-building-services`, `08-materials`, `02-electricity` |
+| Sentier inventory `sector` values | `construction`, `building-services`, `materials`, `electricity` |
 | BAFU:2026 top-level process categories | building components, building processes, construction, construction materials, construction processes, construction waste, flooring, insulation materials, ventilation |
 | ISIC Rev.4 sections | F (construction), L (real estate activities) |
 

@@ -3,8 +3,8 @@ title: sentier-brightway commands
 type: module-page
 summary: The four command line subcommands and the Python entry points, checked against their own --help.
 audience: [P1]
-updated: 2026-09-21
-sources: [sentier-brightway-repo]
+updated: 2026-10-12
+sources: [sentier-brightway-repo, sentier-brightway-pr-3]
 ---
 
 # sentier-brightway commands
@@ -40,6 +40,11 @@ Every entry point, checked on 2026-09-21 against its own `--help` in a clone at 
   default is a path on the author's machine, so pass it explicitly.
 - `--files DIR`: reuse an existing file-mode export instead of writing a new one into
   `<out>/files` first.
+- `--source ID` and `--source-version V`, on every command at commit `3239a4e` (pull
+  request #3, pending merge): the inventory source to install, which is the folder
+  `data/<source>-<version>/` of sentier-inventory and names the databases, default
+  `bafu-2026`; and the release of that source to read when the data root serves several,
+  otherwise the only one present. (source: sentier-brightway-pr-3)
 
 ### Examples
 
@@ -71,6 +76,11 @@ Used interactively rather than from a shell; all four are exported from the pack
 | `backtest.run_backtest(files_dir, xlsx, out_dir)` | The `backtest` command. |
 | `datapackage.score(out_dir, process_code, method_id)` | Scores one process of a files export for one method id, without `bw2data`. |
 | `registry.load_registry(folder)` | Reads the five parquet tables of an export back into frames. |
+
+At commit `3239a4e` the first four calls also take `source="bafu-2026"` and
+`source_version=None`, the Python form of the two flags above, and `import_db` and
+`import_files` are the same functions under source-neutral names.
+(source: sentier-brightway-pr-3)
 
 After an install, link your own activities to the installed inventory and biosphere and
 score them with stock `bw2calc`; in the Activity Browser, reload the project and the

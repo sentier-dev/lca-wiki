@@ -3,8 +3,8 @@ title: Assess a transport service in Industrials
 type: use-case
 summary: "Model a tonne-kilometre or a passenger-kilometre: load factor, empty running, the split between vehicle and infrastructure, and the allocation on a mixed service."
 audience: [P1]
-updated: 2026-09-22
-sources: [gics-2023, sentier-inventory-readme, bafu-2026-release, epd-international-pcr-library, ef-pef-method, ilcd-2010, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [gics-2023, sentier-inventory-readme, bafu-2026-release, epd-international-pcr-library, ef-pef-method, ilcd-2010, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../sectors/industrials.md, ../concepts/functional-unit.md, ../concepts/allocation-and-multifunctionality.md, assess-an-energy-carrier-in-energy.md, assess-an-electricity-mix-in-utilities.md]
 ---
@@ -41,9 +41,9 @@ output it delivers before it is scrapped
   `Infrastructure & buildings` and `Services` (epd-international-pcr-library). Of the
   PEFCRs the Commission lists, Aviation, Drones & eVTOLs is in development and is the only
   one touching this sector (ef-pef-method).
-- **Tools and background data.** Sentier inventory folder `04-transport` for transport
-  processes, with `08-materials` and `09-electronics` for the bill of materials and
-  `07-construction` and `10-building-services` for infrastructure and installed equipment
+- **Tools and background data.** Sentier inventory `sector` value `transport` for
+  transport processes, with `materials` and `electronics` for the bill of materials and
+  `construction` and `building-services` for infrastructure and installed equipment
   (sentier-inventory-readme); BAFU:2026 top-level categories `transport systems`,
   `mechanical`, `building processes`, `construction processes`, `compressed air` and
   `recycling` (bafu-2026-release).
@@ -104,7 +104,7 @@ has to take it on trust.
 6. **Amortise the vehicle over its real service life and utilisation.** Manufacturers
    publish design lives, not observed ones, and the observed figure is what the study
    needs ([../sectors/industrials.md](../sectors/industrials.md)). The bill of materials
-   comes from `08-materials` and `09-electronics`
+   comes from the `materials` and `electronics` sectors
    (sentier-inventory-readme;
    [../../sentier/modules/sentier-inventory/use-cases/](../../sentier/modules/sentier-inventory/use-cases/)).
 

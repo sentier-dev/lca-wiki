@@ -3,7 +3,7 @@ title: core/sectors
 type: readme
 summary: The 11 GICS sector pages and the crosswalk to the other sector taxonomies in use.
 audience: [P1, P2]
-updated: 2026-09-21
+updated: 2026-10-12
 sources: []
 ---
 
@@ -18,7 +18,7 @@ in this wiki serve it.
 Eleven pages, one per sector of the Global Industry Classification Standard (GICS):
 energy, materials, industrials, consumer discretionary, consumer staples, health care,
 financials, information technology, communication services, utilities, real estate.
-Plus `crosswalk.md`, which maps each GICS sector onto the sector folders of the Sentier
+Plus `crosswalk.md`, which maps each GICS sector onto the sector values of the Sentier
 inventory, the BAFU groups and the ISIC divisions ecoinvent uses. Industry-group pages
 are added only when a use case needs one.
 

@@ -3,8 +3,8 @@ title: sentier-importers
 type: module
 summary: The pipelines that turn external LCA databases into the Sentier data format.
 audience: [P1, P2]
-updated: 2026-09-21
-sources: [sentier-importers-repo]
+updated: 2026-10-12
+sources: [sentier-importers-repo, sentier-importers-pr-29]
 related: [../../platform.md, ../../commands.md, ../sentier-brightway/README.md]
 ---
 
@@ -24,6 +24,11 @@ dated 2026-09-17 · **as of:** 2026-09-21.
 
 The package is **not on PyPI**: a request to `https://pypi.org/pypi/sentier-importers/json`
 on 2026-09-21 answered 404, so work from a clone. (source: sentier-importers-repo)
+
+**Re-read on 2026-10-12** at commit `a27910f`, the head of branch `feat/source-folders`
+proposed as pull request #29 and not yet merged, for the way inventory tables are
+delivered: one folder per source release in sentier-inventory, the sector as a column.
+(source: sentier-importers-pr-29)
 
 ## Install
 
@@ -49,7 +54,10 @@ platformdirs, pyarrow, pyyaml and rdflib. (source: sentier-importers-repo)
    own repository's checker instead. See [gotchas.md](gotchas.md).
 4. **Delivers by pull request, never by push.** A run is a dry run unless delivery is
    asked for, and files then land in the target repository's data folder on a branch.
-   See [commands.md](commands.md).
+   For inventory targets the registry category is the source folder,
+   `data/<source>-<source_version>/` (`bafu-2026-v1`), and a delivery replaces that
+   folder whole: sources never share a folder, so nothing is merged. See
+   [commands.md](commands.md) and [datasets.md](datasets.md).
 
 ## Datasets
 

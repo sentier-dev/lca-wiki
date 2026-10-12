@@ -3,8 +3,8 @@ title: Assess a material in Materials
 type: use-case
 summary: "Produce a cradle-to-gate result for a bulk material: the electricity mix that decides the ranking, the scrap and recycled-content rules, and the declaration that follows."
 audience: [P1]
-updated: 2026-09-22
-sources: [gics-2023, epd-international-pcr-library, epd-pcr-2019-14, en-15804-2019, ef-pef-method, sentier-inventory-readme, bafu-2026-release, ecoinvent-kb-system-models, ilcd-2010, lca-wiki-editorial]
+updated: 2026-10-12
+sources: [gics-2023, epd-international-pcr-library, epd-pcr-2019-14, en-15804-2019, ef-pef-method, sentier-inventory-readme, bafu-2026-release, ecoinvent-kb-system-models, ilcd-2010, lca-wiki-editorial, sentier-inventory-pr-5]
 verified: no
 related: [../sectors/materials.md, ../concepts/allocation-and-multifunctionality.md, prepare-an-epd.md, assess-an-electricity-mix-in-utilities.md, choose-a-background-database.md]
 ---
@@ -40,10 +40,10 @@ those is an allocation decision that changes the number
   additionally sit under the EN 15804 core rules (en-15804-2019;
   [../standards/en-15804.md](../standards/en-15804.md)). No PEFCR in the Commission's
   current list covers bulk materials (ef-pef-method).
-- **Tools and background data.** Sentier inventory folder `08-materials`, with
-  `03-chemicals` for feedstocks and `07-construction` for the construction-bound
-  materials; sector folders carry a rank prefix and the lower rank wins when records
-  overlap (sentier-inventory-readme). BAFU:2026 top-level categories `metals`, `minerals`,
+- **Tools and background data.** Sentier inventory `sector` value `materials`, with
+  `chemicals` for feedstocks and `construction` for the construction-bound materials;
+  the sector is a column of the process table, filtered out of one source folder
+  (sentier-inventory-readme). BAFU:2026 top-level categories `metals`, `minerals`,
   `chemicals`, `plastics`, `glass`, `ceramics`, `wood`, `paper+ board`, `cardboard`,
   `construction materials` and `insulation materials` (bafu-2026-release).
 
@@ -113,7 +113,7 @@ twice (lca-wiki-editorial).
 
 8. **Install the background and calculate.** Loader:
    [../../sentier/modules/sentier-brightway/use-cases/](../../sentier/modules/sentier-brightway/use-cases/);
-   the `08-materials` folder and the rank rule in
+   the `materials` sector and the source folder it sits in, in
    [../../sentier/modules/sentier-inventory/use-cases/](../../sentier/modules/sentier-inventory/use-cases/);
    BAFU release in [../../bafu/use-cases/](../../bafu/use-cases/); a licensed ecoinvent
    release through
